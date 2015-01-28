@@ -1,6 +1,7 @@
 var elixir = require('laravel-elixir');
 
 require('laravel-elixir-bower');
+require('laravel-elixir-rename');
 
 /*
  |--------------------------------------------------------------------------
@@ -16,5 +17,7 @@ require('laravel-elixir-bower');
 elixir(function(mix) {
   mix.bower()
     .sass('app.scss')
-    .version('css/app.css');
+    .scriptsIn('public/js', 'resources/assets/scripts')
+    .rename('public/js/all.js', 'app.js', 'public/js')
+    .version(['css/app.css', 'js/app.js', 'js/vendor.js']);
 });
