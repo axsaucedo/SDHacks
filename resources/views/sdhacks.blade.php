@@ -6,7 +6,11 @@
 	   	 <script src="http://angular-ui.github.io/ui-router/release/angular-ui-router.js"></script>
 	    <link rel="stylesheet" href="css/app.css" />
 	    <link rel="stylesheet" href="css/sdhacks.css" />
-    
+
+	    <!--FONTS STYLES -->
+    	<link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+ 		<link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+
  	</head>
 
 	<div  ng-app = "app">
