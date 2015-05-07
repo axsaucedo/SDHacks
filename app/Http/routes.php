@@ -22,7 +22,6 @@ Route::controllers([
 
 
 Route::get('sdhacks', function()
-{	
-
+{
     return view ('sdhacks');
 });
