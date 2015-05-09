@@ -1,4 +1,4 @@
 /vendor
 /bower_components
 .env
-.DS_Store
+**/.DS_Store
