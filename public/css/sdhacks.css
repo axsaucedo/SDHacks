@@ -1,9 +1,14 @@
 /*!
  * SDHACKS Website CSS file containing all style for the different secitions
  */
+img, media {
+  max-width: 100%;
+}
 
-
-
+@font-face {
+font-family: Gotham;
+src: url("../fonts/gotham-medium-1.otf") format("opentype");
+}
 
 .text-vertical-center {
     display: table-cell;
@@ -18,6 +23,16 @@
     font-weight: 700;
 }
 
+.col-centered{
+    float: none;
+    margin: 0 auto;
+}
+
+.center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
 /* Side Menu */
 
 
@@ -76,7 +91,7 @@
     display: table;
     width: 100%;
     height: 100%;
-    background: url(../images/contact_background.png) no-repeat center center scroll;
+    background: url(../images/contact.png) no-repeat center center scroll;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
@@ -84,36 +99,57 @@
 
 }
 
-.page {
-    width: 100%;
-    height: 100%;
-    background: url(../images/page.jpg) no-repeat center center scroll;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    -o-background-size: cover;
 
-}
+
 
 
 /*************ELEMENTS***********/
 
 .circles{ 
-    position: relative; 
     height: 225px; 
     width: 225px; 
     background-color: solid transparent; 
     border-radius: 150px; 
+    -moz-border-radius: 150px/150px;
+    -webkit-border-radius: 150px 150px;
     border-top: 10px solid #FFFFFF; 
     border-left: 10px solid #FFFFFF; 
     border-right: 10px solid #FFFFFF; 
     border-bottom: 10px solid  #FFFFFF; 
+    font-size:32px;
+    color:#fff;
+    text-align:center;
+    vertical-align: middle;
+    display: table-cell;
+    margin-top:50px;
+    margin-bottom: 30px;
+    font-family: 'Gotham', sans-serif;
+
+
+
 
 } 
 
 
-.circle-item {
-    margin-bottom: 30px;
+.home-logo-margin {
+    margin-bottom: 50px;
+    margin-top: 100px;
+}
+.contact-margin {
+    margin-top: 200px;
+    position: relative;
+} 
+.presented-margin {
+	position: relative;
+	top: 320px;
+    margin-bottom:200px;
+    margin-top: 100px;
+}
+
+
+.logos-margin {
+	position: relative;
+	top: 120px;
 }
 
 .btn-dark {
@@ -123,22 +159,21 @@
 }
 
 
-.circle-text { 
-	vertical-align: middle;
-	text-align: center;
-	line-height: 50px;       /* the same as your div height */
-	font-size: 35px;
-	font-weight: bold;
-	font-color: #0FFFFF;
-	
-}
 
 /*********LABEL STYLES *******************/
+.home-label{
+	font-family: 'Gotham', sans-serif;
+	font-size: 13.3px;
 
+
+}
 .about-label { 
-	line-height: 50px;       /* the same as your div height */
+	line-height: 32px;       /* the same as your div height */
 	font-size: 24px;
 	font-weight: bold;
+	margin-bottom:50px;
+	font-family: 'Gotham', sans-serif;
+
 }
 
 .faq-question-labels{ 
@@ -151,4 +186,24 @@
 	font-family: 'Lato', sans-serif;
 	font-size: 18px;
 	color:white;
+}
+
+.email-text{
+	font-family: 'Gotham', sans-serif;
+	font-size: 28px;
+	color: white;
+}
+
+.presented-text{
+	font-family: 'Gotham', sans-serif;
+	font-size: 23.3px;
+	color: #0d72a6;
+}
+.built-text {
+	position: relative;
+	top: 90px;
+    margin-top: 100px;
+    font-family: 'Gotham', sans-serif;
+	font-size: 23.3px;
+	color: white;
 }

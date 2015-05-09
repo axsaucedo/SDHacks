@@ -11,6 +11,8 @@
     	<link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
  		<link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
 
+ 		<!--FONT AWESOME-->
+ 		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
  	</head>
 
 	<div  ng-app = "app">
