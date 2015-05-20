@@ -17,7 +17,6 @@ require('laravel-elixir-rename');
 elixir(function(mix) {
   mix.bower()
     .sass('app.scss')
-    .scriptsIn('public/js', 'resources/assets/scripts')
-    .rename('public/js/all.js', 'app.js', 'public/js')
-    .version(['css/app.css', 'js/app.js', 'js/vendor.js']);
+    .scriptsIn('resources/assets/js', 'public/js/app.js')
+    .version(['css/app.css', 'js/app.js']);
 });
