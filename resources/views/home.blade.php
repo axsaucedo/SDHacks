@@ -1,5 +1,10 @@
 @extends('app')
 
+@section('head')
+    hasdfihasldkfjhasldf
+
+@endsection
+
 @section('content')
 <div class="container">
 	<div class="row">
@@ -15,3 +20,4 @@
 	</div>
 </div>
 @endsection
+

@@ -1,46 +1,50 @@
-<html>
-	<head>
-		<link href='http://fonts.googleapis.com/css?family=Lato:100' rel='stylesheet' type='text/css'>
+@extends('templates.default')
 
-		<style>
-			body {
-				margin: 0;
-				padding: 0;
-				width: 100%;
-				height: 100%;
-				color: #B0BEC5;
-				display: table;
-				font-weight: 100;
-				font-family: 'Lato';
-			}
+@section('head')
+    <title>SD Hacks - Welcome</title>
+@endsection
 
-			.container {
-				text-align: center;
-				display: table-cell;
-				vertical-align: middle;
-			}
+@section('content')
+<div id="welcome-page">
+    <section id="splash" class="container-fluid">
+        <div id="splash-content">
+            <div class="center-content">
+                <img id="main-logo" src="/images/logo.png" alt="SD Hacks Logo">
 
-			.content {
-				text-align: center;
-				display: inline-block;
-			}
+                <div class="info-box row">
+                    <p>Find out when San Diego's Primier Hackathon Goes Live</p>
+                    <input type="text" class="col-xs-8">
+                    <div class="button register-button col-xs-4">
+                        Register
+                    </div>
+                </div>
 
-			.title {
-				font-size: 96px;
-				margin-bottom: 40px;
-			}
+            </div>
+        </div>
 
-			.quote {
-				font-size: 24px;
-			}
-		</style>
-	</head>
-	<body>
-		<div class="container">
-			<div class="content">
-				<div class="title">Laravel 5</div>
-				<div class="quote">{{ Inspiring::quote() }}</div>
-			</div>
-		</div>
-	</body>
-</html>
+        <div class="background-layer" id="background-layer-1"></div>
+        <div class="background-layer" id="background-layer-2"></div>
+
+    </section>
+    <section id="overview">
+        <div id="overview-content" class="container-fluid">
+            <h3 class="section-title">
+                For one weekend, SD Hacks plans to turn San Diego into the hack capital of the world and you're invited.
+            </h3>
+
+            <div class="bar">
+                1000+ hackers
+            </div>
+            <div class="bar">
+                5+ companies
+            </div>
+            <div class="bar">
+                36 hours
+            </div>
+            <div class="bar">
+                $1000s in prizes
+            </div>
+        </div>
+    </section>
+</div>
+@endsection

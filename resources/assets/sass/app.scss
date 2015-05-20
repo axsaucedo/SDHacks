@@ -1,1 +1,5 @@
-@import "../../../bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+//See Gulpfile for include path
+@import 'bootstrap';
+@import 'includes/global';
+
+@import 'welcome/welcome.scss';
