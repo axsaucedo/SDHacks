@@ -1,0 +1,135 @@
+@import 'header';
+
+#welcome-page{
+  #splash{
+    height: 120vh;
+    width: 100vw;
+
+    //Content with height back to 100vh
+    #splash-content{
+      display: flex;
+      height: 83.3%;
+
+      //Keep Content Vertically & Horizontally Centered
+      .center-content{
+        margin: auto;
+
+        //Centered SD hacks Logo
+        #main-logo{
+          display: block;
+          margin: 0 auto;
+          width: 275px;
+        }
+
+        .info-box{
+          background: rgba(0,0,0,0.5);
+          width: 80vw;
+          max-width: 700px;
+          padding: 15px;
+          text-align: center;
+
+          //Info Box Text
+          p{
+            color: white;
+            text-transform: uppercase;
+          }
+        }
+
+        .register-button{
+          height: 45px;
+          line-height: 45px;
+          margin: 0 auto;
+        }
+      }
+    }
+
+    //Scripps & Circuit Overlays for Background
+    .background-layer{
+      background-position: center;
+      background-size: cover;
+      height: 120%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+    }
+    #background-layer-1{
+      background-image: url(/images/circuit.png);
+      opacity: 0.3;
+      z-index: -1;
+    }
+    #background-layer-2{
+      background-image: url(/images/scripps.jpg);
+      z-index: -2;
+    }
+  }
+
+  #overview{
+    $overview-bg: #005a8f;
+
+    border-bottom: 75px solid transparent;
+    border-right: 100vw solid $overview-bg;
+    border-top: 75px solid transparent;
+    box-sizing: content-box;
+    color: white;
+    //height: 100vh;
+    margin-top: -110px;
+    padding: 0;
+    position: relative;
+    z-index: 5;
+
+    #overview-content{
+      //height: 100vh;
+      //left: 0;
+      //position: absolute;
+      //top: 0;
+      width: 100vw;
+
+      .section-title{
+        font-size: 30px;
+        color: white;
+        font-weight: 100;
+        text-align: center;
+        margin-top: 35px;
+        padding: 25px;
+      }
+
+      .bar{
+        height: 82px;
+        width: 80%;
+        margin: 65px 0 65px -15px;
+        font-size: 40px;
+        line-height: 82px;
+        text-align: right;
+        font-weight: 100;
+
+        //Triangle using the after psuedo element to cover up the bar
+        &:after{
+          border-left: 50px solid transparent;
+          border-bottom: 82px solid $overview-bg;
+          content: "";
+          display: block;
+          float: right;
+          margin-left: 25px; //Right pad the text
+        }
+
+        &:nth-of-type(1){
+          background: #1777b0;
+          width: 90%;
+        }
+        &:nth-of-type(2){
+          background: #1c86c4;
+          width: 70%;
+        }
+        &:nth-of-type(3){
+          background: #2e9bdb;
+          width: 80%;
+        }
+        &:nth-of-type(4){
+          background: #51afe7;
+          width: 60%;
+        }
+      }
+    }
+  }
+}

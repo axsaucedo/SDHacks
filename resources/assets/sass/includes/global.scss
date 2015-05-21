@@ -1,0 +1,16 @@
+html{
+  font-size: 16px;
+  font-family: 'Open Sans', sans-serif;
+  color: #313131;
+}
+
+.button{
+  background-color: #2c9dc7;
+  color: white;
+  cursor: pointer;
+  text-align: center;
+
+  &:hover{
+    background-color: #2a7aa2;
+  }
+}
