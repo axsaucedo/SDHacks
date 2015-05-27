@@ -37,10 +37,11 @@ class AddUserFields extends Migration {
 		Schema::table('users', function(Blueprint $table)
 		{
 			// Add name column back
-			$table->string('name');
+			$table->string('name')->after('id');
 
 			// Remove new columns
 			$table->dropColumn([
+                    'fname',
 					'lname',
 					'phone',
 					'school',
