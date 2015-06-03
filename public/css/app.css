@@ -5892,4 +5892,61 @@ html {
         background: #51afe7;
         width: 60%; }
 
+#register {
+  font-family: 'Roboto', sans-serif;
+  color: #444444; }
+  #register #QuestionsContainer {
+    margin-top: 40vh;
+    margin-bottom: 40vh; }
+  #register .question {
+    padding-top: 15vh;
+    padding-bottom: 15vh;
+    opacity: 0.25;
+    transition: opacity 0.7s;
+    -webkit-transform: translatez(0);
+        -ms-transform: translatez(0);
+            transform: translatez(0); }
+    #register .question.focused {
+      opacity: 1; }
+    #register .question .questionContainer .questionNumber {
+      font-size: 1.5rem; }
+    #register .question .questionContainer .questionText {
+      font-size: 2rem; }
+    #register .question .answerContainer {
+      padding-top: 10px; }
+      #register .question .answerContainer .form-control-wrapper .form-control:not(.empty) ~ .floating-label {
+        top: -2.8rem;
+        top: calc(-2rem - 12px);
+        font-size: 2rem;
+        color: #444444; }
+      #register .question .answerContainer .nextQuestionButton {
+        float: right;
+        position: relative;
+        top: -2.5em;
+        top: calc(-1em - 21px);
+        color: #006dcc;
+        cursor: pointer; }
+        #register .question .answerContainer .nextQuestionButton.textButton {
+          top: -1.5em;
+          top: calc(-1em - 9px); }
+      #register .question .answerContainer .questionChoicesContainer {
+        list-style: none;
+        padding: 0;
+        margin: 0; }
+        #register .question .answerContainer .questionChoicesContainer .questionChoice {
+          cursor: pointer;
+          padding-top: 12px; }
+          #register .question .answerContainer .questionChoicesContainer .questionChoice div.radio, #register .question .answerContainer .questionChoicesContainer .questionChoice div.checkbox {
+            display: inline-block; }
+            #register .question .answerContainer .questionChoicesContainer .questionChoice div.radio span.check:before, #register .question .answerContainer .questionChoicesContainer .questionChoice div.checkbox span.check:before {
+              position: relative;
+              width: 10px !important; }
+          #register .question .answerContainer .questionChoicesContainer .questionChoice.selected {
+            color: #006dcc; }
+    #register .question .questionSubText {
+      font-size: 0.8em;
+      font-weight: 100;
+      color: #939393;
+      padding-top: 10px; }
+
 /*# sourceMappingURL=app.css.map */
