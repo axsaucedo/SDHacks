@@ -149,6 +149,7 @@ return [
          * Vendor Service Providers...
          */
         'Collective\Html\HtmlServiceProvider',
+        'Watson\BootstrapForm\BootstrapFormServiceProvider',
 
 	],
 
@@ -200,6 +201,7 @@ return [
 
         'Form' => 'Collective\Html\FormFacade',
         'Html' => 'Collective\Html\HtmlFacade',
+        'BootForm' => 'Watson\BootstrapForm\Facades\BootstrapForm',
 
 	],
 

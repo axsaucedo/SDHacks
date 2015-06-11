@@ -18,17 +18,17 @@ class AddUserFields extends Migration {
 			$table->dropColumn('name');
 
 			// Add new columns
-			$table->string('fname');
-			$table->string('lname');
-            $table->string('major')->nullable();
-            $table->string('phone')->nullable();
-            $table->string('school')->nullable();
-            $table->string('gender')->nullable();
-            $table->date('dob')->nullable();
-            $table->string('github')->nullable();
-            $table->string('linkedin')->nullable();
-            $table->string('website')->nullable();
-            $table->string('allergies')->nullable();
+			$table->string('fname')->after('remember_token');
+			$table->string('lname')->after('remember_token');
+            $table->string('major')->nullable()->after('remember_token');
+            $table->string('phone')->nullable()->after('remember_token');
+            $table->string('school')->nullable()->after('remember_token');
+            $table->string('gender')->nullable()->after('remember_token');
+            $table->date('dob')->nullable()->after('remember_token');
+            $table->string('github')->nullable()->after('remember_token');
+            $table->string('linkedin')->nullable()->after('remember_token');
+            $table->string('website')->nullable()->after('remember_token');
+            $table->string('allergies')->nullable()->after('remember_token');
 		});
 	}
 

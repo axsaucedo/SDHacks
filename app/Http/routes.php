@@ -15,6 +15,11 @@ Route::get('/', function(){
     return view('welcome');
 });
 
+Route::group(['prefix' => 'apply', 'middleware' => 'auth'], function() {
+    Route::get('/', 'ApplicationsController@create');
+    Route::post('/', 'ApplicationsController@store');
+});
+
 Route::controllers([
     'auth' => 'Auth\AuthController',
     'password' => 'Auth\PasswordController',

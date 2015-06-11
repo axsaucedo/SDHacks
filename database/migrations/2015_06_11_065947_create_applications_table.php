@@ -21,9 +21,9 @@ class CreateApplicationsTable extends Migration {
             $table->smallInteger('year');
             $table->string('team_role');
             $table->string('state')->default('CA');
-            $table->boolean('traveling');
+            $table->boolean('traveling')->default(0);
             $table->boolean('reimbursement')->nullable();
-            $table->boolean('busing');
+            $table->boolean('busing')->default(0);
 			$table->timestamps();
 		});
 	}
