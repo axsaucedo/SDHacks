@@ -20,7 +20,15 @@ class AddUserFields extends Migration {
 			// Add new columns
 			$table->string('fname');
 			$table->string('lname');
-			$table->string('phone')->nullable();
+            $table->string('major')->nullable();
+            $table->string('phone')->nullable();
+            $table->string('school')->nullable();
+            $table->string('gender')->nullable();
+            $table->date('dob')->nullable();
+            $table->string('github')->nullable();
+            $table->string('linkedin')->nullable();
+            $table->string('website')->nullable();
+            $table->string('allergies')->nullable();
 		});
 	}
 
