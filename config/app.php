@@ -152,6 +152,8 @@ return [
          */
         'Collective\Html\HtmlServiceProvider',
         'Watson\BootstrapForm\BootstrapFormServiceProvider',
+        'Barryvdh\Debugbar\ServiceProvider',
+        'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider',
 
 	],
 
@@ -204,6 +206,7 @@ return [
         'Form' => 'Collective\Html\FormFacade',
         'Html' => 'Collective\Html\HtmlFacade',
         'BootForm' => 'Watson\BootstrapForm\Facades\BootstrapForm',
+        'Debugbar' => 'Barryvdh\Debugbar\Facade',
 
 	],
 
