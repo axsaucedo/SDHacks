@@ -21,9 +21,6 @@ class AddUserFields extends Migration {
 			$table->string('fname');
 			$table->string('lname');
 			$table->string('phone')->nullable();
-			$table->string('school');
-			$table->string('github')->nullable();
-			$table->boolean('bussing')->default(false);
 		});
 	}
 
@@ -43,10 +40,7 @@ class AddUserFields extends Migration {
 			$table->dropColumn([
                     'fname',
 					'lname',
-					'phone',
-					'school',
-					'github',
-					'bussing'
+					'phone'
 				]);
 		});
 	}

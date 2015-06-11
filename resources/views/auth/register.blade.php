@@ -47,37 +47,6 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="col-md-4 control-label">Phone</label>
-                            <div class="col-md-6">
-                                <input type="text" class="form-control" name="phone" value="{{ old('phone') }}">
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="col-md-4 control-label">School</label>
-                            <div class="col-md-6">
-                                <input type="text" class="form-control" name="school" value="{{ old('school') }}">
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="col-md-4 control-label">GitHub URL</label>
-                            <div class="col-md-6">
-                                <input type="text" class="form-control" name="github" value="{{ old('github') }}">
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="col-md-4 control-label">Will you be bussing?</label>
-                            <div class="col-md-6">
-                                <select class="form-control" name="bussing" value="{{ old('bussing') }}">
-                                    <option value="0">No</option>
-                                    <option value="1">Yes</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
                             <label class="col-md-4 control-label">Password</label>
                             <div class="col-md-6">
                                 <input type="password" class="form-control" name="password">
