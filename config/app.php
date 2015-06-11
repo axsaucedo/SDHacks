@@ -28,6 +28,8 @@ return [
 
 	'url' => 'http://localhost',
 
+    'domain' => env('APP_DOMAIN', 'sdhacks.io'),
+
 	/*
 	|--------------------------------------------------------------------------
 	| Application Timezone
