@@ -5804,6 +5804,7 @@ html {
 
 #welcome-page #splash {
   height: 120vh;
+  height: calc(100vh + 80px);
   width: 100vw; }
   #welcome-page #splash #splash-content {
     display: -webkit-flex;
@@ -5891,5 +5892,53 @@ html {
       #welcome-page #overview #overview-content .bar:nth-of-type(4) {
         background: #51afe7;
         width: 60%; }
+
+#welcome-page #faq {
+  background: #137bd4;
+  color: white;
+  margin-top: -75px;
+  padding: 95px 0 110px 0;
+  width: 100vw; }
+  #welcome-page #faq .question {
+    font-size: 22px;
+    padding: 25px 0 25px 0; }
+    #welcome-page #faq .question h4 {
+      font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 1.15em;
+      font-weight: 100;
+      text-transform: uppercase;
+      letter-spacing: 3px; }
+    #welcome-page #faq .question p {
+      font-family: 'Lato', sans-serif;
+      font-weight: 100;
+      letter-spacing: 2px;
+      padding-top: 5px; }
+
+#welcome-page #sponsors {
+  border-bottom: 90px solid transparent;
+  border-right: 100vw solid #ecf7f9;
+  border-top: 90px solid transparent;
+  box-sizing: content-box;
+  color: white;
+  height: 100vh;
+  margin-top: -110px;
+  padding: 0;
+  position: relative;
+  z-index: 5; }
+  #welcome-page #sponsors #sponsors-content {
+    width: 90vw;
+    margin-left: 5vw;
+    padding-top: 125px; }
+    #welcome-page #sponsors #sponsors-content .logo {
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      filter: grayscale(100%) contrast(0%);
+      -webkit-filter: grayscale(100%) contrast(0%);
+      height: 180px;
+      margin-bottom: 100px;
+      transition: -webkit-filter 0.1s; }
+      #welcome-page #sponsors #sponsors-content .logo:hover {
+        -webkit-filter: none; }
 
 /*# sourceMappingURL=app.css.map */
