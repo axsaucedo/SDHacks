@@ -6017,12 +6017,12 @@ html {
   #auth input.form-control {
     box-shadow: none;
     border: none;
-    background-color: #137bd4;
-    transition: background-color 0.2s;
+    background-color: #26A4C5;
+    transition: background-color 0.3s;
     color: white; }
     #auth input.form-control:focus {
-      background-color: #005a8f;
-      transition: background-color 0.2s; }
+      background-color: #2a7aa2;
+      transition: background-color 0.3s; }
   #auth .btn {
     text-transform: uppercase;
     font-weight: bold; }

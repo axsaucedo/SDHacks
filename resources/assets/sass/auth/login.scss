@@ -1,5 +1,5 @@
 $dashboard-color: #137bd4;
-$form-color: #2c9dc7;
+$form-color: #26A4C5;
 $form-color-focused: #2a7aa2;
 
 #auth
@@ -32,13 +32,13 @@ $form-color-focused: #2a7aa2;
   input.form-control {
     box-shadow: none;
     border: none;
-    background-color: #137bd4;
-    transition: background-color 0.2s;
+    background-color: $form-color;
+    transition: background-color 0.3s;
     color: white;
 
     &:focus {
-      background-color: #005a8f;
-      transition: background-color 0.2s;
+      background-color: $form-color-focused;
+      transition: background-color 0.3s;
     }
   }
 
