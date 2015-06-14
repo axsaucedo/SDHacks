@@ -32,6 +32,10 @@
                     <p class="h5">{{ $member->fname . ' ' . $member->lname }}</p>
                 @endforeach
 
+                <hr />
+
+                <a class="btn btn-boxed-white btn-block" href="{{ action('TeamsController@leave') }}">Leave Team</a>
+
             </div>
         </div>
     </div>

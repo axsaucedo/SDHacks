@@ -27,6 +27,7 @@ Route::group(['domain' => 'my.' . config('app.domain')], function() {
             Route::get('/', 'TeamsController@show');
             Route::get('/create', 'TeamsController@create');
             Route::post('/create', 'TeamsController@store');
+            Route::get('/leave', 'TeamsController@leave');
         });
 
         Route::group(['prefix' => 'apply'], function() {

@@ -6,95 +6,119 @@ use App\Http\Controllers\Controller;
 use App\Team;
 use Illuminate\Http\Request;
 
-class TeamsController extends Controller {
+class TeamsController extends Controller
+{
 
-	/**
-	 * Display a listing of the resource.
-	 *
-	 * @return Response
-	 */
-	public function index()
-	{
-		//
-	}
+    public function __construct()
+    {
+        $this->middleware('team', ['except' => ['create', 'store']]);
+        $this->middleware('noteam', ['only' => ['create', 'store']]);
+    }
 
-	/**
-	 * Show the form for creating a new resource.
-	 *
-	 * @return Response
-	 */
-	public function create()
-	{
-        if (isset(\Auth::user()->team))
-            return redirect()->action('TeamsController@show');
+    /**
+     * Display a listing of the resource.
+     *
+     * @return Response
+     */
+    public function index()
+    {
+        //
+    }
 
-		return view('teams.create');
-	}
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return Response
+     */
+    public function create()
+    {
+        return view('teams.create');
+    }
 
-	/**
-	 * Store a newly created resource in storage.
-	 *
-	 * @return Response
-	 */
-	public function store()
-	{
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @return Response
+     */
+    public function store()
+    {
         $team = new Team();
 
-        if($team->save())
-        {
+        if ($team->save()) {
             \Auth::user()->team_id = $team->id;
             \Auth::user()->save();
         }
 
         return redirect()->action('TeamsController@show');
-	}
+    }
 
-	/**
-	 * Display the specified resource.
-	 *
-	 * @return Response
-	 */
-	public function show()
-	{
-		if (!\Auth::user()->team_id)
-            return redirect()->action('TeamsController@create');
-
+    /**
+     * Display the specified resource.
+     *
+     * @return Response
+     */
+    public function show()
+    {
         $team = \Auth::user()->team()->with('members')->first();
 
         return view('teams.show', compact('team'));
-	}
+    }
 
-	/**
-	 * Show the form for editing the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function edit($id)
-	{
-		//
-	}
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int $id
+     * @return Response
+     */
+    public function edit($id)
+    {
+        //
+    }
 
-	/**
-	 * Update the specified resource in storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function update($id)
-	{
-		//
-	}
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  int $id
+     * @return Response
+     */
+    public function update($id)
+    {
+        //
+    }
 
-	/**
-	 * Remove the specified resource from storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function destroy($id)
-	{
-		//
-	}
+    /**
+     * Allow user to leave team
+     *
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
+    public function leave()
+    {
+        $user = \Auth::user()->with(['team', 'team.members'])->first();
+        $team_id = $user->team->id;
+
+        // Remove user's team
+        $user->team_id = null;
+        $user->save();
+        \Log::debug("User removed from team {$team_id}");
+
+        // Clean up team if no more users
+        if ((count($user->team->members) - 1) == 0) {
+            Team::destroy($team_id);
+            \Log::info("Team {$team_id} deleted.");
+        }
+
+        return redirect('/');
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int $id
+     * @return Response
+     */
+    public function destroy($id)
+    {
+        //
+    }
 
 }
