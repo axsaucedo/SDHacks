@@ -5806,6 +5806,36 @@ html {
   .button:hover {
     background-color: #2a7aa2; }
 
+.btn {
+  text-transform: uppercase;
+  font-weight: 100;
+  letter-spacing: 2px; }
+  .btn.btn-boxed-white {
+    background-color: white;
+    border: 2px solid #26A4C5;
+    transition: border 0.3s; }
+    .btn.btn-boxed-white:hover {
+      background-color: #f2f2f2;
+      border: 2px solid #2a7aa2;
+      transition: border 0.3s; }
+
+.control-label {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 1.15em;
+  font-weight: 300; }
+
+input.form-control {
+  box-shadow: none;
+  border: none;
+  background-color: #26A4C5;
+  transition: background-color 0.3s;
+  color: white;
+  font-weight: 100; }
+  input.form-control:focus {
+    background-color: #2a7aa2;
+    transition: background-color 0.3s; }
+
 #welcome-page {
   /* Progress Bar Section */
   /* FAQ List */
@@ -6016,38 +6046,32 @@ html {
       .layout.one-sm-column .panel-heading.panel-logo img {
         text-align: center;
         max-width: 225px; }
-  .layout.one-sm-column .control-label {
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-size: 1.15em;
-    font-weight: 300; }
-  .layout.one-sm-column input.form-control {
-    box-shadow: none;
-    border: none;
-    background-color: #26A4C5;
-    transition: background-color 0.3s;
-    color: white;
-    font-weight: 100; }
-    .layout.one-sm-column input.form-control:focus {
-      background-color: #2a7aa2;
-      transition: background-color 0.3s; }
-  .layout.one-sm-column .btn {
-    text-transform: uppercase;
-    font-weight: 100;
-    letter-spacing: 2px; }
-    .layout.one-sm-column .btn.btn-boxed-white {
-      background-color: white;
-      border: 2px solid #26A4C5;
-      transition: border 0.3s; }
-      .layout.one-sm-column .btn.btn-boxed-white:hover {
-        background-color: #f2f2f2;
-        border: 2px solid #2a7aa2;
-        transition: border 0.3s; }
   .layout.one-sm-column .panel-extension {
     color: white; }
     .layout.one-sm-column .panel-extension a {
       color: white; }
       .layout.one-sm-column .panel-extension a:hover {
         text-decoration: underline; }
+
+#application {
+  background-color: #26A4C5;
+  min-height: 100%; }
+  #application
+.form-control {
+    background: white;
+    color: black;
+    opacity: 0.4;
+    transition: opacity 0.3s; }
+    #application
+.form-control:focus {
+      background: white;
+      opacity: 1;
+      transition: opacity 0.3s; }
+  #application
+.control-label {
+    opacity: 0.4; }
+  #application
+.form-high-group {
+    margin: 20% 0; }
 
 /*# sourceMappingURL=app.css.map */

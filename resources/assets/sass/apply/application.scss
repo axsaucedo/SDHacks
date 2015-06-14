@@ -1,0 +1,33 @@
+$application-color: #26A4C5;
+$application-form-color: white;
+
+#application
+{
+  background-color: $application-color;
+  min-height: 100%;
+
+  .form-control
+  {
+    background: white;
+    color: black;
+    opacity: 0.4;
+    transition: opacity 0.3s;
+
+    &:focus
+    {
+      background: white;
+      opacity: 1;
+      transition: opacity 0.3s;
+    }
+  }
+
+  .control-label
+  {
+    opacity: 0.4;
+  }
+
+  .form-high-group
+  {
+    margin: 20% 0;
+  }
+}
