@@ -5811,9 +5811,72 @@ html {
   /* FAQ List */
   /* Sponsors List */
   /* Presented By Section */ }
+  #welcome-page #nav-bar {
+    background-color: rgba(36, 164, 199, 0.6);
+    bottom: 0;
+    height: 75px;
+    position: absolute;
+    width: 100%;
+    z-index: 50; }
+    #welcome-page #nav-bar .logo {
+      color: white;
+      float: left;
+      font-size: 2rem;
+      font-weight: 400;
+      height: 75px;
+      letter-spacing: 5px;
+      line-height: 75px; }
+      #welcome-page #nav-bar .logo span {
+        font-weight: 100; }
+    #welcome-page #nav-bar .dots {
+      float: right;
+      height: 75px; }
+      #welcome-page #nav-bar .dots .dot {
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-flex-direction: column;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        float: left;
+        height: 40px;
+        margin: 10px 15px;
+        text-align: center;
+        width: 50px; }
+        #welcome-page #nav-bar .dots .dot .circle {
+          background-color: white;
+          border-radius: 100%;
+          height: 25px;
+          margin: auto;
+          opacity: .8;
+          transition: height 0.5s, width 0.5s, opacity 0.5s;
+          width: 25px; }
+        #welcome-page #nav-bar .dots .dot .title {
+          color: white;
+          height: 0;
+          letter-spacing: 2px;
+          margin-top: 2px;
+          text-transform: uppercase;
+          transition: opacity 0.5s;
+          opacity: 0; }
+          #welcome-page #nav-bar .dots .dot .title span {
+            margin-left: -100%;
+            margin-right: -100%;
+            text-align: center; }
+        #welcome-page #nav-bar .dots .dot.active .circle {
+          height: 40px;
+          opacity: 1;
+          width: 40px; }
+        #welcome-page #nav-bar .dots .dot.active .title {
+          opacity: 1; }
+    #welcome-page #nav-bar.affix {
+      position: fixed;
+      top: 0; }
   #welcome-page #splash {
     height: 120vh;
     height: calc(100vh + 80px);
+    min-height: 550px;
+    position: relative;
     width: 100vw; }
     #welcome-page #splash #splash-content {
       display: -webkit-flex;
@@ -5825,13 +5888,14 @@ html {
         #welcome-page #splash #splash-content .center-content #main-logo {
           display: block;
           margin: 0 auto;
-          width: 275px; }
+          width: 17.2rem; }
         #welcome-page #splash #splash-content .center-content .info-box {
           background: rgba(0, 0, 0, 0.5);
-          width: 80vw;
+          margin-top: 1.5rem;
           max-width: 700px;
           padding: 15px;
-          text-align: center; }
+          text-align: center;
+          width: 80vw; }
           #welcome-page #splash #splash-content .center-content .info-box p {
             color: white;
             text-transform: uppercase; }
@@ -5855,12 +5919,13 @@ html {
       background-image: url(/images/scripps.jpg);
       z-index: -2; }
   #welcome-page #overview {
+    -moz-transform: scale(0.9999);
     border-bottom: 75px solid transparent;
     border-right: 100vw solid #005a8f;
     border-top: 75px solid transparent;
     box-sizing: content-box;
     color: white;
-    margin-top: -110px;
+    margin-top: -80px;
     padding: 0;
     position: relative;
     z-index: 5; }
@@ -5885,26 +5950,25 @@ html {
         transition: width 1s;
         white-space: nowrap;
         width: 80%;
-        letter-spacing: .04rem; }
-        #welcome-page #overview #overview-content .bar:after {
+        letter-spacing: .04rem;
+        width: 0px; }
+        #welcome-page #overview #overview-content .bar::after {
           border-left: 50px solid transparent;
           border-bottom: 82px solid #005a8f;
           content: "";
           display: block;
           float: right;
           margin-left: 1.5rem; }
-        #welcome-page #overview #overview-content .bar.before {
-          width: 0px !important; }
-        #welcome-page #overview #overview-content .bar:nth-of-type(1) {
+        #welcome-page #overview #overview-content .bar:nth-of-type(1).active {
           background: #1777b0;
           width: 90%; }
-        #welcome-page #overview #overview-content .bar:nth-of-type(2) {
+        #welcome-page #overview #overview-content .bar:nth-of-type(2).active {
           background: #1c86c4;
           width: 75%; }
-        #welcome-page #overview #overview-content .bar:nth-of-type(3) {
+        #welcome-page #overview #overview-content .bar:nth-of-type(3).active {
           background: #2e9bdb;
           width: 80%; }
-        #welcome-page #overview #overview-content .bar:nth-of-type(4) {
+        #welcome-page #overview #overview-content .bar:nth-of-type(4).active {
           background: #51afe7;
           width: 60%; }
   #welcome-page #faq {
@@ -5931,6 +5995,7 @@ html {
         color: white;
         text-decoration: underline; }
   #welcome-page #sponsors {
+    -moz-transform: scale(0.9999);
     border-bottom: 90px solid transparent;
     border-right: 100vw solid #ecf7f9;
     border-top: 90px solid transparent;
@@ -5980,21 +6045,21 @@ html {
         background-position: left center; }
   #welcome-page #footer {
     background: #2d91ac; }
-    #welcome-page #footer #footer-content {
-      height: 70px; }
-      #welcome-page #footer #footer-content .mini-logo {
-        height: 50px;
-        margin: 10px 0; }
-      #welcome-page #footer #footer-content a {
-        color: white;
-        font-size: 21px;
-        font-weight: 300;
-        padding-left: 15px; }
-      #welcome-page #footer #footer-content div {
-        line-height: 70px;
-        height: 70px;
-        color: white;
-        font-size: 21px;
-        font-weight: 300; }
+    #welcome-page #footer #footer-content .mini-logo {
+      height: 50px;
+      margin: 10px 0; }
+    #welcome-page #footer #footer-content a {
+      color: white;
+      font-size: 21px;
+      font-weight: 300;
+      padding-left: 15px; }
+    #welcome-page #footer #footer-content div {
+      color: white;
+      float: right;
+      font-size: 21px;
+      font-weight: 300;
+      height: 70px;
+      line-height: 70px;
+      padding-right: 15px; }
 
 /*# sourceMappingURL=app.css.map */
