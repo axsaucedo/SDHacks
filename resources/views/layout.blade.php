@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    <title>SD Hacks</title>
+    <title>SD Hacks - @yield('title')</title>
 
     <!--FONTS STYLES -->
     <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>

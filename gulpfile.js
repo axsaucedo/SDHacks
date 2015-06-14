@@ -31,5 +31,6 @@ elixir(function(mix) {
             paths.jquery + "dist/jquery.js",
             paths.bootstrap + "javascripts/bootstrap.js",
             './resources/assets/scripts/**/*.js'
-        ], 'public/js/app.js', './');
+        ], 'public/js/app.js', './')
+        .version(['css/app.css', 'js/app.js']);
 });
