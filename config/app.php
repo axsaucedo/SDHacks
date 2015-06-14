@@ -28,6 +28,8 @@ return [
 
 	'url' => 'http://localhost',
 
+    'domain' => env('APP_DOMAIN', 'sdhacks.io'),
+
 	/*
 	|--------------------------------------------------------------------------
 	| Application Timezone
@@ -145,6 +147,14 @@ return [
 		'App\Providers\EventServiceProvider',
 		'App\Providers\RouteServiceProvider',
 
+        /*
+         * Vendor Service Providers...
+         */
+        'Collective\Html\HtmlServiceProvider',
+        'Watson\BootstrapForm\BootstrapFormServiceProvider',
+        'Barryvdh\Debugbar\ServiceProvider',
+        'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider',
+
 	],
 
 	/*
@@ -192,6 +202,11 @@ return [
 		'URL'       => 'Illuminate\Support\Facades\URL',
 		'Validator' => 'Illuminate\Support\Facades\Validator',
 		'View'      => 'Illuminate\Support\Facades\View',
+
+        'Form' => 'Collective\Html\FormFacade',
+        'Html' => 'Collective\Html\HtmlFacade',
+        'BootForm' => 'Watson\BootstrapForm\Facades\BootstrapForm',
+        'Debugbar' => 'Barryvdh\Debugbar\Facade',
 
 	],
 
