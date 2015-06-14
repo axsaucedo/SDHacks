@@ -42,10 +42,10 @@
 
                 <div class="row">
                     <div class="col-sm-6">
-                        <button type="submit" class="btn btn-primary btn-lg btn-block">Login</button>
+                        <button type="submit" class="btn btn-boxed-white btn-lg btn-block">Login</button>
                     </div>
                     <div class="col-sm-6">
-                        <a href="{{ action('Auth\AuthController@getRegister') }}" class="btn btn-primary btn-lg
+                        <a href="{{ action('Auth\AuthController@getRegister') }}" class="btn btn-boxed-white btn-lg
                                         btn-block">Register</a>
                     </div>
                 </div>
@@ -55,7 +55,7 @@
     </div>
 
     <div class="panel-extension text-center">
-        <a class="btn-link" href="{{ url('/password/email') }}">Forgot Your
+        <a href="{{ url('/password/email') }}">Forgot Your
             Password?</a>
     </div>
 @endsection

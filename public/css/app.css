@@ -6035,11 +6035,18 @@ html {
     text-transform: uppercase;
     font-weight: 100;
     letter-spacing: 2px; }
+    .layout.one-sm-column .btn.btn-boxed-white {
+      background-color: white;
+      border: 2px solid #26A4C5;
+      transition: border 0.3s; }
+      .layout.one-sm-column .btn.btn-boxed-white:hover {
+        background-color: #f2f2f2;
+        border: 2px solid #2a7aa2;
+        transition: border 0.3s; }
   .layout.one-sm-column .panel-extension {
     color: white; }
     .layout.one-sm-column .panel-extension a {
-      color: white;
-      font-weight: bold; }
+      color: white; }
       .layout.one-sm-column .panel-extension a:hover {
         text-decoration: underline; }
 

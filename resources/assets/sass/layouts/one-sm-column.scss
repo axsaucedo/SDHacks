@@ -56,6 +56,18 @@ $form-color-focused: #2a7aa2;
     text-transform: uppercase;
     font-weight: 100;
     letter-spacing: 2px;
+
+    &.btn-boxed-white {
+      background-color: white;
+      border: 2px solid $form-color;
+      transition: border .3s;
+
+      &:hover {
+        background-color: darken(white, 5%);
+        border: 2px solid $form-color-focused;
+        transition: border .3s;
+      }
+    }
   }
 
   .panel-extension {
@@ -63,7 +75,6 @@ $form-color-focused: #2a7aa2;
 
     a {
       color: white;
-      font-weight: bold;
 
       &:hover {
         text-decoration: underline;
