@@ -23,8 +23,8 @@
                         @endif
 
                         @if (\Session::has('message'))
-                            <div class="alert alert-success">
-                                Your application has been saved!
+                            <div class="alert alert-danger">
+                                {{ \Session::get('message') }}
                             </div>
                         @endif
 

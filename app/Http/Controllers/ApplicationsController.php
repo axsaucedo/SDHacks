@@ -26,7 +26,7 @@ class ApplicationsController extends Controller {
 	 */
 	public function create()
 	{
-		return view('apply');
+		return view('apply.application');
 	}
 
 	/**
@@ -51,7 +51,7 @@ class ApplicationsController extends Controller {
         // Create new application for user
         Application::create($app_input);
 
-        return view('apply')->with(['message' => 'Created!']);
+        return view('apply.success');
 	}
 
 	/**
