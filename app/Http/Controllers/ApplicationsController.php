@@ -2,10 +2,10 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\CreateApplicationRequest;
+use App\Application;
 
 use Illuminate\Http\Request;
-
-use App\Application;
 
 class ApplicationsController extends Controller {
 
@@ -29,23 +29,24 @@ class ApplicationsController extends Controller {
 		return view('apply.application');
 	}
 
-	/**
-	 * Store a newly created resource in storage.
-	 *
-	 * @return Response
-	 */
-	public function store()
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param CreateApplicationRequest $request
+     * @return Response
+     */
+	public function store(CreateApplicationRequest $request)
 	{
         $profile_fields = ['major', 'phone', 'school', 'gender', 'dob', 'github', 'linkedin', 'website', 'allergies'];
 
         // Extract profile fields from request
-		$profile_input = \Request::only($profile_fields);
+		$profile_input = $request->only($profile_fields);
 
         // Update user profile
         \Auth::user()->update($profile_input);
 
         // Extract application fields from request
-        $app_input = \Request::except($profile_fields);
+        $app_input = $request->except($profile_fields);
         $app_input['user_id'] = \Auth::id();
 
         // Create new application for user
