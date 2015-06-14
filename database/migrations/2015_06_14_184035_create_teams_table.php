@@ -22,7 +22,7 @@ class CreateTeamsTable extends Migration {
 
         Schema::table('users', function(Blueprint $table)
         {
-            $table->integer('team_id')->unsigned()->after('remember_token');
+            $table->integer('team_id')->unsigned()->after('remember_token')->nullable();
             $table->foreign('team_id')->references('id')->on('teams');
         });
 	}
