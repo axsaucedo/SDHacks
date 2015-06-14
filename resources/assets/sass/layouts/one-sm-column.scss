@@ -13,13 +13,21 @@ $form-color-focused: #2a7aa2;
     border-radius: 4px;
   }
 
-  .panel-heading.panel-logo {
-    background: #fff;
+  .panel-heading {
+    text-transform: uppercase;
+    font-size: $font-size-h3;
+    font-weight: 300;
+    letter-spacing: 2px;
     text-align: center;
 
-    img {
+    &.panel-logo {
+      background: #fff;
       text-align: center;
-      max-width: 225px;
+
+      img {
+        text-align: center;
+        max-width: 225px;
+      }
     }
   }
 
@@ -27,6 +35,7 @@ $form-color-focused: #2a7aa2;
     text-transform: uppercase;
     letter-spacing: 1px;
     font-size: 1.15em;
+    font-weight: 300;
   }
 
   input.form-control {
@@ -35,6 +44,7 @@ $form-color-focused: #2a7aa2;
     background-color: $form-color;
     transition: background-color 0.3s;
     color: white;
+    font-weight: 100;
 
     &:focus {
       background-color: $form-color-focused;
@@ -44,7 +54,8 @@ $form-color-focused: #2a7aa2;
 
   .btn {
     text-transform: uppercase;
-    font-weight: bold;
+    font-weight: 100;
+    letter-spacing: 2px;
   }
 
   .panel-extension {
