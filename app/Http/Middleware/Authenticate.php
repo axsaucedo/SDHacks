@@ -44,7 +44,11 @@ class Authenticate {
 			}
 		}
 
-		return $next($request);
+        // Check if user is confirmed
+        if (\Auth::user()->confirmed)
+            return $next($request);
+        else
+            return view('auth.success');
 	}
 
 }

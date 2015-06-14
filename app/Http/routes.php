@@ -15,6 +15,10 @@ Route::get('/', function(){
     return view('welcome');
 });
 
+Route::get('/success', function() {
+    return view('auth.confirm');
+});
+
 Route::group(['domain' => 'my.' . config('app.domain')], function() {
     Route::group(['prefix' => 'apply', 'middleware' => 'auth'], function() {
         Route::get('/', 'ApplicationsController@create');
