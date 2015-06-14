@@ -1,0 +1,20 @@
+.control-label {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 1.15em;
+  font-weight: 300;
+}
+
+input.form-control {
+  box-shadow: none;
+  border: none;
+  background-color: $form-color;
+  transition: background-color 0.3s;
+  color: white;
+  font-weight: 100;
+
+  &:focus {
+    background-color: $form-color-focused;
+    transition: background-color 0.3s;
+  }
+}
