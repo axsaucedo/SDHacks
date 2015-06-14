@@ -15,7 +15,7 @@ class CreateTeamsTable extends Migration {
         Schema::create('teams', function(Blueprint $table)
         {
             $table->increments('id');
-            $table->string('uuid')->unique();
+            $table->string('code')->unique();
             $table->string('project');
             $table->timestamps();
         });
@@ -36,6 +36,7 @@ class CreateTeamsTable extends Migration {
 	{
         Schema::table('users', function(Blueprint $table) {
             $table->dropForeign('users_team_id_foreign');
+            $table->dropColumn('team_id');
         });
 
 		Schema::drop('teams');

@@ -11,6 +11,15 @@ class Team extends Model {
      */
     protected $guarded = ['id'];
 
+    public static function boot()
+    {
+        parent::boot();
+
+        static::saving(function($instance) {
+            $instance->code = strtoupper(str_random(6));
+        });
+    }
+
     /**
      * Returns the team's members
      *
