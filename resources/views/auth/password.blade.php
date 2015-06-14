@@ -1,5 +1,7 @@
 @extends('templates.one-sm-column')
 
+@section('title', 'Reset Password')
+
 @section('content')
 
     <div class="panel panel-default">
