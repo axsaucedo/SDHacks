@@ -4,6 +4,12 @@ html{
   color: #313131;
 }
 
+@media (max-width: 420px) {
+  html{
+    font-size: 11px;
+  }
+}
+
 .button{
   background-color: #2c9dc7;
   color: white;

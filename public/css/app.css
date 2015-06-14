@@ -5794,6 +5794,10 @@ html {
   font-family: 'Open Sans', sans-serif;
   color: #313131; }
 
+@media (max-width: 420px) {
+  html {
+    font-size: 11px; } }
+
 .button {
   background-color: #2c9dc7;
   color: white;
@@ -5802,143 +5806,195 @@ html {
   .button:hover {
     background-color: #2a7aa2; }
 
-#welcome-page #splash {
-  height: 120vh;
-  height: calc(100vh + 80px);
-  width: 100vw; }
-  #welcome-page #splash #splash-content {
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    height: 83.3%; }
-    #welcome-page #splash #splash-content .center-content {
-      margin: auto; }
-      #welcome-page #splash #splash-content .center-content #main-logo {
-        display: block;
-        margin: 0 auto;
-        width: 275px; }
-      #welcome-page #splash #splash-content .center-content .info-box {
-        background: rgba(0, 0, 0, 0.5);
-        width: 80vw;
-        max-width: 700px;
-        padding: 15px;
-        text-align: center; }
-        #welcome-page #splash #splash-content .center-content .info-box p {
-          color: white;
-          text-transform: uppercase; }
-      #welcome-page #splash #splash-content .center-content .register-button {
-        height: 45px;
-        line-height: 45px;
-        margin: 0 auto; }
-  #welcome-page #splash .background-layer {
-    background-position: center;
-    background-size: cover;
-    height: 120%;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 100%; }
-  #welcome-page #splash #background-layer-1 {
-    background-image: url(/images/circuit.png);
-    opacity: 0.3;
-    z-index: -1; }
-  #welcome-page #splash #background-layer-2 {
-    background-image: url(/images/scripps.jpg);
-    z-index: -2; }
-
-#welcome-page #overview {
-  border-bottom: 75px solid transparent;
-  border-right: 100vw solid #005a8f;
-  border-top: 75px solid transparent;
-  box-sizing: content-box;
-  color: white;
-  margin-top: -110px;
-  padding: 0;
-  position: relative;
-  z-index: 5; }
-  #welcome-page #overview #overview-content {
+#welcome-page {
+  /* Progress Bar Section */
+  /* FAQ List */
+  /* Sponsors List */
+  /* Presented By Section */ }
+  #welcome-page #splash {
+    height: 120vh;
+    height: calc(100vh + 80px);
     width: 100vw; }
-    #welcome-page #overview #overview-content .section-title {
-      font-size: 30px;
-      color: white;
-      font-weight: 100;
-      text-align: center;
-      margin-top: 35px;
-      padding: 25px; }
-    #welcome-page #overview #overview-content .bar {
-      height: 82px;
-      width: 80%;
-      margin: 65px 0 65px -15px;
-      font-size: 40px;
-      line-height: 82px;
-      text-align: right;
-      font-weight: 100; }
-      #welcome-page #overview #overview-content .bar:after {
-        border-left: 50px solid transparent;
-        border-bottom: 82px solid #005a8f;
-        content: "";
-        display: block;
-        float: right;
-        margin-left: 25px; }
-      #welcome-page #overview #overview-content .bar:nth-of-type(1) {
-        background: #1777b0;
-        width: 90%; }
-      #welcome-page #overview #overview-content .bar:nth-of-type(2) {
-        background: #1c86c4;
-        width: 70%; }
-      #welcome-page #overview #overview-content .bar:nth-of-type(3) {
-        background: #2e9bdb;
-        width: 80%; }
-      #welcome-page #overview #overview-content .bar:nth-of-type(4) {
-        background: #51afe7;
-        width: 60%; }
-
-#welcome-page #faq {
-  background: #137bd4;
-  color: white;
-  margin-top: -75px;
-  padding: 95px 0 110px 0;
-  width: 100vw; }
-  #welcome-page #faq .question {
-    font-size: 22px;
-    padding: 25px 0 25px 0; }
-    #welcome-page #faq .question h4 {
-      font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-      font-size: 1.15em;
-      font-weight: 100;
-      text-transform: uppercase;
-      letter-spacing: 3px; }
-    #welcome-page #faq .question p {
-      font-family: 'Lato', sans-serif;
-      font-weight: 100;
-      letter-spacing: 2px;
-      padding-top: 5px; }
-
-#welcome-page #sponsors {
-  border-bottom: 90px solid transparent;
-  border-right: 100vw solid #ecf7f9;
-  border-top: 90px solid transparent;
-  box-sizing: content-box;
-  color: white;
-  height: 100vh;
-  margin-top: -110px;
-  padding: 0;
-  position: relative;
-  z-index: 5; }
-  #welcome-page #sponsors #sponsors-content {
-    width: 90vw;
-    margin-left: 5vw;
-    padding-top: 125px; }
-    #welcome-page #sponsors #sponsors-content .logo {
+    #welcome-page #splash #splash-content {
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      height: 83.3%; }
+      #welcome-page #splash #splash-content .center-content {
+        margin: auto; }
+        #welcome-page #splash #splash-content .center-content #main-logo {
+          display: block;
+          margin: 0 auto;
+          width: 275px; }
+        #welcome-page #splash #splash-content .center-content .info-box {
+          background: rgba(0, 0, 0, 0.5);
+          width: 80vw;
+          max-width: 700px;
+          padding: 15px;
+          text-align: center; }
+          #welcome-page #splash #splash-content .center-content .info-box p {
+            color: white;
+            text-transform: uppercase; }
+        #welcome-page #splash #splash-content .center-content .register-button {
+          height: 45px;
+          line-height: 45px;
+          margin: 0 auto; }
+    #welcome-page #splash .background-layer {
       background-position: center;
-      background-repeat: no-repeat;
+      background-size: cover;
+      height: 120%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%; }
+    #welcome-page #splash #background-layer-1 {
+      background-image: url(/images/circuit.png);
+      opacity: 0.3;
+      z-index: -1; }
+    #welcome-page #splash #background-layer-2 {
+      background-image: url(/images/scripps.jpg);
+      z-index: -2; }
+  #welcome-page #overview {
+    border-bottom: 75px solid transparent;
+    border-right: 100vw solid #005a8f;
+    border-top: 75px solid transparent;
+    box-sizing: content-box;
+    color: white;
+    margin-top: -110px;
+    padding: 0;
+    position: relative;
+    z-index: 5; }
+    #welcome-page #overview #overview-content {
+      width: 100vw; }
+      #welcome-page #overview #overview-content .section-title {
+        font-size: 2rem;
+        color: white;
+        font-weight: 100;
+        text-align: center;
+        margin-top: 2rem;
+        padding: 1.5rem;
+        letter-spacing: .125rem; }
+      #welcome-page #overview #overview-content .bar {
+        font-size: 2.5rem;
+        font-weight: 100;
+        height: 5.1rem;
+        line-height: 5.1rem;
+        margin: 4rem 0 4rem -15px;
+        overflow: hidden;
+        text-align: right;
+        transition: width 1s;
+        white-space: nowrap;
+        width: 80%;
+        letter-spacing: .04rem; }
+        #welcome-page #overview #overview-content .bar:after {
+          border-left: 50px solid transparent;
+          border-bottom: 82px solid #005a8f;
+          content: "";
+          display: block;
+          float: right;
+          margin-left: 1.5rem; }
+        #welcome-page #overview #overview-content .bar.before {
+          width: 0px !important; }
+        #welcome-page #overview #overview-content .bar:nth-of-type(1) {
+          background: #1777b0;
+          width: 90%; }
+        #welcome-page #overview #overview-content .bar:nth-of-type(2) {
+          background: #1c86c4;
+          width: 75%; }
+        #welcome-page #overview #overview-content .bar:nth-of-type(3) {
+          background: #2e9bdb;
+          width: 80%; }
+        #welcome-page #overview #overview-content .bar:nth-of-type(4) {
+          background: #51afe7;
+          width: 60%; }
+  #welcome-page #faq {
+    background: #137bd4;
+    color: white;
+    margin-top: -75px;
+    padding: 95px 0 110px 0;
+    width: 100vw; }
+    #welcome-page #faq .question {
+      font-size: 22px;
+      padding: 25px 0 25px 0; }
+      #welcome-page #faq .question h4 {
+        font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 1.15em;
+        font-weight: 100;
+        text-transform: uppercase;
+        letter-spacing: 3px; }
+      #welcome-page #faq .question p {
+        font-family: 'Lato', sans-serif;
+        font-weight: 100;
+        letter-spacing: 2px;
+        padding-top: 5px; }
+      #welcome-page #faq .question a {
+        color: white;
+        text-decoration: underline; }
+  #welcome-page #sponsors {
+    border-bottom: 90px solid transparent;
+    border-right: 100vw solid #ecf7f9;
+    border-top: 90px solid transparent;
+    box-sizing: content-box;
+    color: white;
+    margin-top: -110px;
+    padding: 0;
+    position: relative;
+    z-index: 5; }
+    #welcome-page #sponsors #sponsors-content {
+      width: 90vw;
+      margin-left: 5vw;
+      padding-top: 7.8rem; }
+      #welcome-page #sponsors #sponsors-content .logo {
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        filter: grayscale(100%) contrast(0%);
+        -webkit-filter: grayscale(100%) contrast(0%);
+        height: 10rem;
+        margin-bottom: 6rem;
+        transition: -webkit-filter 0.1s; }
+        #welcome-page #sponsors #sponsors-content .logo:hover {
+          -webkit-filter: none; }
+  #welcome-page #presented #presented-content {
+    padding: 55px 0 75px 0; }
+    #welcome-page #presented #presented-content .section-title {
+      color: #3572a1;
+      font-size: 25px;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 45px; }
+    #welcome-page #presented #presented-content .logo-container {
+      text-align: center; }
+      #welcome-page #presented #presented-content .logo-container img {
+        height: 120px; }
+    #welcome-page #presented #presented-content .logo {
       background-size: contain;
-      filter: grayscale(100%) contrast(0%);
-      -webkit-filter: grayscale(100%) contrast(0%);
-      height: 180px;
-      margin-bottom: 100px;
-      transition: -webkit-filter 0.1s; }
-      #welcome-page #sponsors #sponsors-content .logo:hover {
-        -webkit-filter: none; }
+      background-repeat: no-repeat;
+      height: 120px; }
+      #welcome-page #presented #presented-content .logo#tesc-logo {
+        background-image: url(https://photos-2.dropbox.com/t/2/AAD6lrOzZYuJGZwsvM0wElIFxOrCuyJnQ0sDVszf8KBUyA/12/67849934/png/32x32/1/1434240000/0/2/tesc_blue.png/CM6drSAgASACIAMgBCAFIAYgBygB/fZhKsMM9Yo4Rve-wBXLhL9nF1M4ugeXJiukfmYiL1xI?size=1600x1200&size_mode=2);
+        background-position: right center; }
+      #welcome-page #presented #presented-content .logo#mlh-logo {
+        background-image: url(http://static.mlh.io/brand-assets/logo/mlh-logo.png);
+        background-position: left center; }
+  #welcome-page #footer {
+    background: #2d91ac; }
+    #welcome-page #footer #footer-content {
+      height: 70px; }
+      #welcome-page #footer #footer-content .mini-logo {
+        height: 50px;
+        margin: 10px 0; }
+      #welcome-page #footer #footer-content a {
+        color: white;
+        font-size: 21px;
+        font-weight: 300;
+        padding-left: 15px; }
+      #welcome-page #footer #footer-content div {
+        line-height: 70px;
+        height: 70px;
+        color: white;
+        font-size: 21px;
+        font-weight: 300; }
 
 /*# sourceMappingURL=app.css.map */
