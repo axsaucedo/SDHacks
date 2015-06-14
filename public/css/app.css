@@ -5997,40 +5997,41 @@ html {
         font-size: 21px;
         font-weight: 300; }
 
-#auth {
+.layout.one-sm-column {
   background: url(/images/scripps.jpg);
   background-size: cover;
   height: 100%;
   padding-top: 50px; }
-  #auth .panel {
+  .layout.one-sm-column .panel {
     border-radius: 4px; }
-  #auth .panel-heading.panel-logo {
+  .layout.one-sm-column .panel-heading.panel-logo {
     background: #fff;
     text-align: center; }
-    #auth .panel-heading.panel-logo img {
+    .layout.one-sm-column .panel-heading.panel-logo img {
       text-align: center;
       max-width: 225px; }
-  #auth .control-label {
+  .layout.one-sm-column .control-label {
     text-transform: uppercase;
     letter-spacing: 1px;
     font-size: 1.15em; }
-  #auth input.form-control {
+  .layout.one-sm-column input.form-control {
     box-shadow: none;
     border: none;
     background-color: #26A4C5;
     transition: background-color 0.3s;
     color: white; }
-    #auth input.form-control:focus {
+    .layout.one-sm-column input.form-control:focus {
       background-color: #2a7aa2;
       transition: background-color 0.3s; }
-  #auth .btn {
+  .layout.one-sm-column .btn {
     text-transform: uppercase;
     font-weight: bold; }
-  #auth .panel-extension {
+  .layout.one-sm-column .panel-extension {
     color: white; }
-    #auth .panel-extension a {
-      color: white; }
-      #auth .panel-extension a:hover {
+    .layout.one-sm-column .panel-extension a {
+      color: white;
+      font-weight: bold; }
+      .layout.one-sm-column .panel-extension a:hover {
         text-decoration: underline; }
 
 /*# sourceMappingURL=app.css.map */

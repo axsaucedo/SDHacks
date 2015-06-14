@@ -2,7 +2,7 @@ $dashboard-color: #137bd4;
 $form-color: #26A4C5;
 $form-color-focused: #2a7aa2;
 
-#auth
+.layout.one-sm-column
 {
   background: url(/images/scripps.jpg);
   background-size: cover;
@@ -52,6 +52,7 @@ $form-color-focused: #2a7aa2;
 
     a {
       color: white;
+      font-weight: bold;
 
       &:hover {
         text-decoration: underline;
