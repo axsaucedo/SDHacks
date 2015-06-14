@@ -19,16 +19,16 @@ class AddUserFields extends Migration {
 
 			// Add new columns
 			$table->string('fname')->after('remember_token');
-			$table->string('lname')->after('remember_token');
-            $table->string('major')->nullable()->after('remember_token');
-            $table->string('phone')->nullable()->after('remember_token');
-            $table->string('school')->nullable()->after('remember_token');
-            $table->string('gender')->nullable()->after('remember_token');
-            $table->date('dob')->nullable()->after('remember_token');
-            $table->string('github')->nullable()->after('remember_token');
-            $table->string('linkedin')->nullable()->after('remember_token');
-            $table->string('website')->nullable()->after('remember_token');
-            $table->string('allergies')->nullable()->after('remember_token');
+			$table->string('lname')->after('fname');
+            $table->string('major')->nullable()->after('lname');
+            $table->string('phone')->nullable()->after('major');
+            $table->string('school')->nullable()->after('phone');
+            $table->string('gender')->nullable()->after('school');
+            $table->date('dob')->nullable()->after('gender');
+            $table->string('github')->nullable()->after('dob');
+            $table->string('linkedin')->nullable()->after('github');
+            $table->string('website')->nullable()->after('linkedin');
+            $table->string('allergies')->nullable()->after('website');
 		});
 	}
 
