@@ -1,8 +1,10 @@
 @import 'header';
 
 #welcome-page{
+
   #splash{
     height: 120vh;
+    height: calc(100vh + 80px);
     width: 100vw;
 
     //Content with height back to 100vh
@@ -64,6 +66,8 @@
     }
   }
 
+  /* Progress Bar Section */
+
   #overview{
     $overview-bg: #005a8f;
 
@@ -79,29 +83,30 @@
     z-index: 5;
 
     #overview-content{
-      //height: 100vh;
-      //left: 0;
-      //position: absolute;
-      //top: 0;
       width: 100vw;
 
       .section-title{
-        font-size: 30px;
+        font-size: 2rem;
         color: white;
         font-weight: 100;
         text-align: center;
-        margin-top: 35px;
-        padding: 25px;
+        margin-top: 2rem;
+        padding: 1.5rem;
+        letter-spacing: .125rem;
       }
 
       .bar{
-        height: 82px;
-        width: 80%;
-        margin: 65px 0 65px -15px;
-        font-size: 40px;
-        line-height: 82px;
-        text-align: right;
+        font-size: 2.5rem;
         font-weight: 100;
+        height: 5.1rem;
+        line-height: 5.1rem;
+        margin: 4rem 0 4rem -15px;
+        overflow: hidden;
+        text-align: right;
+        transition: width 1s;
+        white-space: nowrap;
+        width: 80%;
+        letter-spacing: .04rem;
 
         //Triangle using the after psuedo element to cover up the bar
         &:after{
@@ -110,7 +115,12 @@
           content: "";
           display: block;
           float: right;
-          margin-left: 25px; //Right pad the text
+          margin-left: 1.5rem;
+        }
+
+        //Before transition
+        &.before{
+          width: 0px !important;
         }
 
         &:nth-of-type(1){
@@ -119,7 +129,7 @@
         }
         &:nth-of-type(2){
           background: #1c86c4;
-          width: 70%;
+          width: 75%;
         }
         &:nth-of-type(3){
           background: #2e9bdb;
@@ -129,6 +139,142 @@
           background: #51afe7;
           width: 60%;
         }
+      }
+    }
+  }
+
+  /* FAQ List */
+
+  #faq{
+    background: #137bd4;
+    color: white;
+    //height: 100vh;
+    margin-top: -75px;
+    padding: 95px 0 110px 0;
+    width: 100vw;
+
+    .question{
+      font-size: 22px;
+      padding: 25px 0 25px 0;
+      h4{
+        font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 1.15em;
+        font-weight: 100;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+      }
+      p{
+        font-family: 'Lato', sans-serif;
+        font-weight: 100;
+        letter-spacing: 2px;
+        padding-top: 5px;
+      }
+      //Email Links
+      a{
+        color: white;
+        text-decoration: underline;
+      }
+    }
+
+  }
+
+  /* Sponsors List */
+
+  #sponsors{
+    border-bottom: 90px solid transparent;
+    border-right: 100vw solid #ecf7f9;
+    border-top: 90px solid transparent;
+    box-sizing: content-box;
+    color: white;
+    margin-top: -110px;
+    padding: 0;
+    position: relative;
+    z-index: 5;
+
+    #sponsors-content{
+      width: 90vw;
+      margin-left: 5vw;
+      padding-top: 7.8rem;
+
+      .logo{
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        filter: grayscale(100%) contrast(0%);
+        -webkit-filter: grayscale(100%) contrast(0%);
+        height: 10rem;
+        margin-bottom: 6rem;
+        transition: -webkit-filter .1s;
+
+        &:hover{
+          -webkit-filter: none;
+        }
+      }
+
+    }
+  }
+
+  /* Presented By Section */
+
+  #presented{
+    #presented-content{
+      padding: 55px 0 75px 0;
+
+      .section-title{
+        color: #3572a1;
+        font-size: 25px;
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 45px;
+      }
+
+      .logo-container{
+        text-align: center;
+
+        img{
+          height: 120px;
+        }
+      }
+
+      .logo{
+        background-size: contain;
+        background-repeat: no-repeat;
+        height: 120px;
+
+
+        &#tesc-logo{
+          background-image: url(https://photos-2.dropbox.com/t/2/AAD6lrOzZYuJGZwsvM0wElIFxOrCuyJnQ0sDVszf8KBUyA/12/67849934/png/32x32/1/1434240000/0/2/tesc_blue.png/CM6drSAgASACIAMgBCAFIAYgBygB/fZhKsMM9Yo4Rve-wBXLhL9nF1M4ugeXJiukfmYiL1xI?size=1600x1200&size_mode=2);
+          background-position: right center;
+        }
+        &#mlh-logo{
+          background-image: url(http://static.mlh.io/brand-assets/logo/mlh-logo.png);
+          background-position: left center;
+        }
+      }
+    }
+  }
+
+  #footer{
+    background: #2d91ac;
+    #footer-content{
+      height: 70px;
+      .mini-logo{
+        height: 50px;
+        margin: 10px 0;
+      }
+      a{
+        color: white;
+        font-size: 21px;
+        font-weight: 300;
+        padding-left: 15px;
+      }
+      div{
+        line-height: 70px;
+        height: 70px;
+        color: white;
+        font-size: 21px;
+        font-weight: 300;
       }
     }
   }
