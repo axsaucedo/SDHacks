@@ -254,7 +254,9 @@
   /* FAQ List */
 
   #faq{
-    background: #137bd4;
+    background: url(/images/faq-bg.svg);//#137bd4;
+    background-size: cover;
+    background-repeat: no-repeat;
     color: white;
     //height: 100vh;
     margin-top: -75px;
