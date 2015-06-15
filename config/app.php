@@ -154,6 +154,7 @@ return [
         'Watson\BootstrapForm\BootstrapFormServiceProvider',
         'Barryvdh\Debugbar\ServiceProvider',
         'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider',
+        'Skovmand\Mailchimp\MailchimpServiceProvider',
 
 	],
 

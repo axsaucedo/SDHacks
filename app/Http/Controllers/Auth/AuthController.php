@@ -6,6 +6,7 @@ use Illuminate\Contracts\Auth\Registrar;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 use Illuminate\Http\Request;
 use App\User;
+use Mailchimp;
 
 class AuthController extends Controller
 {
@@ -23,6 +24,8 @@ class AuthController extends Controller
 
     protected $redirectTo = '/';
 
+    protected $mailchimp;
+
     use AuthenticatesAndRegistersUsers;
 
     /**
@@ -30,12 +33,13 @@ class AuthController extends Controller
      *
      * @param  \Illuminate\Contracts\Auth\Guard $auth
      * @param  \Illuminate\Contracts\Auth\Registrar $registrar
-     * @return void
+     * @param Mailchimp $mailchimp
      */
-    public function __construct(Guard $auth, Registrar $registrar)
+    public function __construct(Guard $auth, Registrar $registrar, Mailchimp $mailchimp)
     {
         $this->auth = $auth;
         $this->registrar = $registrar;
+        $this->mailchimp = $mailchimp;
 
         $this->middleware('guest', ['except' => ['getLogout', 'getConfirm']]);
     }
@@ -98,8 +102,35 @@ class AuthController extends Controller
         $user->confirmation_code = '';
         if($user->save()) {
             \Auth::login($user);
+            if(env('APP_ENV') != 'local')
+                $this->addEmailToList($user->email);
         }
         return true;
+    }
+
+    /**
+     * Access the mailchimp lists API
+     */
+    public function addEmailToList($email)
+    {
+        $list_id = 630969;
+
+        try {
+            $this->mailchimp
+                ->lists
+                ->subscribe(
+                    $list_id,
+                    ['email' => $email]
+                );
+            return true;
+        } catch (\Mailchimp_List_AlreadySubscribed $e) {
+            $message = "User {$email} is already subscribed!";
+            \Log::warning($message);
+            return false;
+        } catch (\Mailchimp_Error $e) {
+            \Log::error($e);
+            return false;
+        }
     }
 
     /**
