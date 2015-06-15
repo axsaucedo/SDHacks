@@ -15,10 +15,6 @@ Route::get('/', function(){
     return view('welcome');
 });
 
-Route::get('/success', function() {
-    return view('auth.confirm');
-});
-
 Route::group(['domain' => 'my.' . config('app.domain')], function() {
 
     // Protected area
@@ -38,9 +34,9 @@ Route::group(['domain' => 'my.' . config('app.domain')], function() {
             Route::post('/', 'ApplicationsController@store');
         });
     });
-});
 
-Route::controllers([
-    'auth' => 'Auth\AuthController',
-    'password' => 'Auth\PasswordController',
-]);
+    Route::controllers([
+        'auth' => 'Auth\AuthController',
+        'password' => 'Auth\PasswordController',
+    ]);
+});
