@@ -20,9 +20,23 @@ Route::get('/success', function() {
 });
 
 Route::group(['domain' => 'my.' . config('app.domain')], function() {
-    Route::group(['prefix' => 'apply', 'middleware' => 'auth'], function() {
-        Route::get('/', 'ApplicationsController@create');
-        Route::post('/', 'ApplicationsController@store');
+
+    // Protected area
+    Route::group(['middleware' => 'auth'], function() {
+        Route::group(['prefix' => 'team'], function() {
+            Route::get('/', 'TeamsController@show');
+            Route::get('/create', 'TeamsController@create');
+            Route::post('/create', 'TeamsController@store');
+            Route::post('/join', 'TeamsController@join');
+            Route::get('/leave', 'TeamsController@leave');
+            Route::get('/apply', 'TeamsController@apply');
+            Route::post('/apply', 'TeamsController@submitApplication');
+        });
+
+        Route::group(['prefix' => 'apply'], function() {
+            Route::get('/', 'ApplicationsController@create');
+            Route::post('/', 'ApplicationsController@store');
+        });
     });
 });
 

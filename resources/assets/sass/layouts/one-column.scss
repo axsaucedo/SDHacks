@@ -2,7 +2,7 @@ $dashboard-color: #137bd4;
 $form-color: #26A4C5;
 $form-color-focused: #2a7aa2;
 
-.layout.one-sm-column
+.layout.one-column
 {
   background: url(/images/scripps.jpg);
   background-size: cover;
@@ -50,6 +50,22 @@ $form-color-focused: #2a7aa2;
       background-color: $form-color-focused;
       transition: background-color 0.3s;
     }
+  }
+
+  ::-webkit-input-placeholder {
+    color: darken(white, 10%);
+  }
+
+  :-moz-placeholder { /* Firefox 18- */
+    color: darken(white, 10%);
+  }
+
+  ::-moz-placeholder {  /* Firefox 19+ */
+    color: darken(white, 10%);
+  }
+
+  :-ms-input-placeholder {
+    color: darken(white, 10%);
   }
 
   .btn {
