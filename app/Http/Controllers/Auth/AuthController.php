@@ -137,22 +137,36 @@ class AuthController extends Controller
     {
         $gh_user = \Socialite::driver('github')->user();
 
-        $user = User::where('email', $gh_user->getEmail())->first();
+        $user = User::where('github_id', $gh_user->getId())->first();
         $name = explode(' ', $gh_user->name);
 
         if($user){
             \Auth::login($user);
+            $user->github_token = $gh_user->token;
+            $user->save();
+
             return redirect()->intended($this->redirectPath());
         }
         else {
-            return redirect()
-                ->action('Auth\AuthController@register')
-                ->withInput([
-                    'email' => $gh_user->getEmail(),
-                    'github' => $gh_user->url,
-                    'fname' => $name[0],
-                    'lname' => $name[1]
-                ]);
+            $user = User::where('email', $gh_user->getEmail())->first();
+
+            if($user) {
+                return redirect()
+                    ->back()
+                    ->withErrors([
+                       'github' => 'You have not authorized your SD Hacks account for GitHub. Please log in to do so.'
+                    ]);
+            }
+            else {
+                return redirect()
+                    ->action('Auth\AuthController@register')
+                    ->withInput([
+                        'email' => $gh_user->getEmail(),
+                        'github' => $gh_user->url,
+                        'fname' => $name[0],
+                        'lname' => $name[1]
+                    ]);
+            }
         }
     }
 
