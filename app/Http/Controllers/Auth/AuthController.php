@@ -118,4 +118,41 @@ class AuthController extends Controller
         return redirect('AuthController@getConfirm');
     }
 
+    /**
+     * Redirect the user to the GitHub authentication page.
+     *
+     * @return Response
+     */
+    public function redirectToGitHub()
+    {
+        return \Socialite::driver('github')->redirect();
+    }
+
+    /**
+     * Obtain the user information from GitHub.
+     *
+     * @return Response
+     */
+    public function handleGitHubCallback()
+    {
+        $gh_user = \Socialite::driver('github')->user();
+
+        $user = User::where('email', $gh_user->getEmail())->get();
+        $name = explode(' ', $user->name);
+
+        if($user){
+            \Auth::login($user);
+            return redirect()->intended($this->redirectPath());
+        }
+        else {
+            return redirect()
+                ->action('Auth\AuthController@register')
+                ->withInput([
+                    'email' => $gh_user->getEmail(),
+                    'fname' => $name[0],
+                    'lname' => $name[1]
+                ]);
+        }
+    }
+
 }
