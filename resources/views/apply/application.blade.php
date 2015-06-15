@@ -6,6 +6,12 @@
 
 @section('content')
     <div id="application">
+        <div class="header">
+            <div class="content">
+                <h1>SD Hacks 2015 Application</h1>
+                <a href="#gender" class="btn btn-lg btn-boxed-white">Get Started</a>
+            </div>
+        </div>
         <div class="container">
             @if (count($errors) > 0)
                 <div class="alert alert-danger">
