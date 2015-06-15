@@ -1,6 +1,7 @@
 <html>
 	<head>
-		<link href='http://fonts.googleapis.com/css?family=Lato:100' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
 
 		<style>
 			body {
@@ -8,13 +9,15 @@
 				padding: 0;
 				width: 100%;
 				height: 100%;
-				color: #B0BEC5;
+				color: white;
 				display: table;
-				font-weight: 100;
-				font-family: 'Lato';
+                font-family: 'Open Sans' !default;
+                font-weight: 100;
+                background: url(/images/scripps.jpg);
+                background-size: cover;
 			}
 
-			.container {
+			.container-down {
 				text-align: center;
 				display: table-cell;
 				vertical-align: middle;
@@ -26,15 +29,20 @@
 			}
 
 			.title {
-				font-size: 72px;
+				font-size: 60px;
 				margin-bottom: 40px;
 			}
 		</style>
 	</head>
 	<body>
-		<div class="container">
+		<div class="container-down">
 			<div class="content">
-				<div class="title">Be right back.</div>
+                <div class="col-xs-8 col-sm-6 col-md-4 col-xs-offset-2 col-sm-offset-3 col-md-offset-4">
+                    <img class="img-responsive logo" src="{{ asset('images/logo.png') }}" alt="SD Hacks Logo"/>
+                </div>
+                <div class="col-xs-12">
+                    <div class="title">We'll be right back</div>
+                </div>
 			</div>
 		</div>
 	</body>
