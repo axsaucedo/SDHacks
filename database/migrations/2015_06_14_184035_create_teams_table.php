@@ -17,7 +17,7 @@ class CreateTeamsTable extends Migration {
             $table->increments('id');
             $table->tinyInteger('event_id')->default(1);
             $table->string('code')->unique();
-            $table->string('project');
+            $table->string('project')->nullable();
             $table->timestamps();
         });
 
