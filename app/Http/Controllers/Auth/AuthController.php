@@ -37,7 +37,7 @@ class AuthController extends Controller
         $this->auth = $auth;
         $this->registrar = $registrar;
 
-        $this->middleware('guest', ['except' => ['getLogout', 'getConfirm']]);
+        $this->middleware('guest', ['except' => ['getLogout', 'getConfirm', 'edit', 'update', 'redirectToGitHub', 'handleGitHubCallback']]);
     }
 
     /**
@@ -84,6 +84,24 @@ class AuthController extends Controller
             return redirect()->back()->withInput();
         }
 
+    }
+
+    /**
+     * Settings page
+     *
+     * @return \Illuminate\View\View
+     */
+    public function edit()
+    {
+        return view('auth.settings');
+    }
+
+    public function update()
+    {
+        \Auth::user()->update(\Request::all());
+        return redirect()
+            ->back()
+            ->withMessage('Your settings have been saved!');
     }
 
     /**
@@ -136,6 +154,15 @@ class AuthController extends Controller
     public function handleGitHubCallback()
     {
         $gh_user = \Socialite::driver('github')->user();
+
+        if(\Auth::check())
+        {
+            $user = \Auth::user();
+            $user->github_id = $gh_user->getId();
+            $user->github_token = $gh_user->token;
+            $user->save();
+            return redirect()->back()->withMessage('Your GitHub account has been connected!');
+        }
 
         $user = User::where('github_id', $gh_user->getId())->first();
         $name = explode(' ', $gh_user->name);
