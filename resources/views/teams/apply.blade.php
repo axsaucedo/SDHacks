@@ -1,4 +1,4 @@
-@extends('templates.one-sm-column')
+@extends('templates.one-md-column')
 
 @section('title', 'Your Team')
 
@@ -8,7 +8,7 @@
             <div class="panel-heading">
                 Your Team
             </div>
-            <div class="panel-body text-center">
+            <div class="panel-body">
                 @if (count($errors) > 0)
                     <div class="alert alert-danger">
                         <strong>Whoops!</strong> There were some problems with your input.<br><br>
