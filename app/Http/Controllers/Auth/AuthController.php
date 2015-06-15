@@ -41,7 +41,7 @@ class AuthController extends Controller
         $this->registrar = $registrar;
         $this->mailchimp = $mailchimp;
 
-        $this->middleware('guest', ['except' => ['getLogout', 'getConfirm']]);
+        $this->middleware('guest', ['except' => ['getLogout', 'getConfirm', 'edit', 'update', 'redirectToGitHub', 'handleGitHubCallback']]);
     }
 
     /**
@@ -88,6 +88,24 @@ class AuthController extends Controller
             return redirect()->back()->withInput();
         }
 
+    }
+
+    /**
+     * Settings page
+     *
+     * @return \Illuminate\View\View
+     */
+    public function edit()
+    {
+        return view('auth.settings');
+    }
+
+    public function update()
+    {
+        \Auth::user()->update(\Request::all());
+        return redirect()
+            ->back()
+            ->withMessage('Your settings have been saved!');
     }
 
     /**
@@ -147,6 +165,67 @@ class AuthController extends Controller
 
         \Session::flash('message', 'Your confirmation code is no longer active or is incorrect');
         return redirect('AuthController@getConfirm');
+    }
+
+    /**
+     * Redirect the user to the GitHub authentication page.
+     *
+     * @return Response
+     */
+    public function redirectToGitHub()
+    {
+        return \Socialite::driver('github')->redirect();
+    }
+
+    /**
+     * Obtain the user information from GitHub.
+     *
+     * @return Response
+     */
+    public function handleGitHubCallback()
+    {
+        $gh_user = \Socialite::driver('github')->user();
+
+        if(\Auth::check())
+        {
+            $user = \Auth::user();
+            $user->github_id = $gh_user->getId();
+            $user->github_token = $gh_user->token;
+            $user->save();
+            return redirect()->back()->withMessage('Your GitHub account has been connected!');
+        }
+
+        $user = User::where('github_id', $gh_user->getId())->first();
+        $name = explode(' ', $gh_user->name);
+
+        if($user){
+            \Auth::login($user);
+            $user->github_token = $gh_user->token;
+            $user->save();
+
+            return redirect()->intended($this->redirectPath());
+        }
+        else {
+            $user = User::where('email', $gh_user->getEmail())->first();
+
+            if($user) {
+                return redirect()
+                    ->back()
+                    ->withErrors([
+                       'github' => 'You have not authorized your SD Hacks account for GitHub. Please log in to do so.'
+                    ]);
+            }
+            else {
+                return redirect()
+                    ->action('Auth\AuthController@register')
+                    ->withInput([
+                        'email' => $gh_user->getEmail(),
+                        'github' => $gh_user->url,
+                        'fname' => $name[0],
+                        'lname' => $name[1]
+                    ]);
+            }
+        }
     }
 
 }
