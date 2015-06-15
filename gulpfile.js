@@ -13,7 +13,7 @@ var elixir = require('laravel-elixir');
 
 var paths = {
     'bootstrap': './bower_components/bootstrap-sass/assets/',
-    'jquery': './bower_components/jquery/'
+    'jquery': './bower_components/jquery/',
 };
 
 elixir(function(mix) {
@@ -30,7 +30,7 @@ elixir(function(mix) {
         .scripts([
             paths.jquery + "dist/jquery.js",
             paths.bootstrap + "javascripts/bootstrap.js",
-            './resources/assets/scripts/**/*.js'
+            './resources/assets/js/**/*.js'
         ], 'public/js/app.js', './')
         .version(['css/app.css', 'js/app.js']);
 });

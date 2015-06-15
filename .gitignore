@@ -5,3 +5,5 @@
 .idea/
 node_modules
 _ide_helper.php
+/public/js/*
+/public/css/*

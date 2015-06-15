@@ -2,9 +2,88 @@
 
 #welcome-page{
 
+  #nav-bar{
+    background-color: rgba(36,164,199,0.6);
+    bottom: 0;
+    height: 75px;
+    position: absolute;
+    width: 100%;
+    z-index: 50;
+
+    .logo{
+      color: white;
+      float: left;
+      font-size: 2rem;
+      font-weight: 400;
+      height: 75px;
+      letter-spacing: 5px;
+      line-height: 75px;
+
+      span{
+        font-weight: 100;
+      }
+    }
+
+    .dots{
+      float: right;
+      height: 75px;
+      .dot{
+        display: flex;
+        flex-direction: column;
+        float: left;
+        height: 40px;
+        margin: 10px 15px;
+        text-align: center;
+        width: 50px;
+        .circle{
+          background-color: white;
+          border-radius: 100%;
+          height: 25px;
+          margin: auto;
+          opacity: .8;
+          transition: height .5s, width .5s, opacity .5s;
+          width: 25px;
+
+        }
+        .title{
+          color: white;
+          height: 0;
+          letter-spacing: 2px;
+          margin-top: 2px;
+          text-transform: uppercase;
+          transition: opacity .5s;
+          opacity:.6;
+
+          span{
+            margin-left: -100%;
+            margin-right: -100%;
+            text-align: center;
+          }
+        }
+        &.active{
+          .circle{
+            height: 40px;
+            opacity: 1;
+            width: 40px;
+
+          }
+          .title{
+            opacity: 1;
+          }
+        }
+      }
+    }
+
+    &.affix{
+      position: fixed;
+      top: 0;
+    }
+  }
   #splash{
     height: 120vh;
     height: calc(100vh + 80px);
+    min-height: 550px;
+    position: relative;
     width: 100vw;
 
     //Content with height back to 100vh
@@ -20,27 +99,48 @@
         #main-logo{
           display: block;
           margin: 0 auto;
-          width: 275px;
+          width: 17.2rem;
         }
 
         .info-box{
-          background: rgba(0,0,0,0.5);
-          width: 80vw;
-          max-width: 700px;
-          padding: 15px;
+          //background: rgba(0,0,0,0.5);
+          //margin-top: 1.5rem;
+          max-width: 900px;
+          padding: 25px;
           text-align: center;
+          width: 80vw;
 
           //Info Box Text
           p{
             color: white;
             text-transform: uppercase;
+            margin-bottom: 2rem;
+            font-size: 1.6rem;
+            font-weight: 100;
+            letter-spacing: 6px;
+
+            &.info{
+              font-size: 1rem;
+              margin-top: 1.4rem;
+              margin-bottom: 1.4rem;
+            }
+          }
+
+          .social{
+            color: white;
+            font-size: 3rem;
+            margin-top: 3.5rem;
+            letter-spacing: 2rem;
+              a{
+                color: white;
+                text-decoration: none;
+              }
           }
         }
 
         .register-button{
           height: 45px;
           line-height: 45px;
-          margin: 0 auto;
         }
       }
     }
@@ -57,12 +157,17 @@
     }
     #background-layer-1{
       background-image: url(/images/circuit.png);
-      opacity: 0.3;
+      opacity: 0.2;
       z-index: -1;
     }
     #background-layer-2{
       background-image: url(/images/scripps.jpg);
+      opacity: 0.65;
       z-index: -2;
+    }
+    #background-layer-3{
+      background:rgb(0, 5, 26);
+      z-index: -3;
     }
   }
 
@@ -70,6 +175,8 @@
 
   #overview{
     $overview-bg: #005a8f;
+    //AA Slanted Edges on Mozilla
+    -moz-transform: scale(.9999);
 
     border-bottom: 75px solid transparent;
     border-right: 100vw solid $overview-bg;
@@ -77,7 +184,7 @@
     box-sizing: content-box;
     color: white;
     //height: 100vh;
-    margin-top: -110px;
+    margin-top: -80px;
     padding: 0;
     position: relative;
     z-index: 5;
@@ -107,9 +214,10 @@
         white-space: nowrap;
         width: 80%;
         letter-spacing: .04rem;
+        width: 0px;
 
         //Triangle using the after psuedo element to cover up the bar
-        &:after{
+        &::after{
           border-left: 50px solid transparent;
           border-bottom: 82px solid $overview-bg;
           content: "";
@@ -120,24 +228,24 @@
 
         //Before transition
         &.before{
-          width: 0px !important;
+          //width: 0px !important;
         }
 
-        &:nth-of-type(1){
+        &:nth-of-type(1).active{
           background: #1777b0;
-          width: 90%;
+          width: 95%;
         }
-        &:nth-of-type(2){
+        &:nth-of-type(2).active{
           background: #1c86c4;
           width: 75%;
         }
-        &:nth-of-type(3){
+        &:nth-of-type(3).active{
           background: #2e9bdb;
-          width: 80%;
+          width: 85%;
         }
-        &:nth-of-type(4){
+        &:nth-of-type(4).active{
           background: #51afe7;
-          width: 60%;
+          width: 65%;
         }
       }
     }
@@ -154,7 +262,7 @@
     width: 100vw;
 
     .question{
-      font-size: 22px;
+      font-size: 1.45rem;
       padding: 25px 0 25px 0;
       h4{
         font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -181,6 +289,9 @@
   /* Sponsors List */
 
   #sponsors{
+    //AA Slanted Edges on Mozilla
+    -moz-transform: scale(.9999);
+
     border-bottom: 90px solid transparent;
     border-right: 100vw solid #ecf7f9;
     border-top: 90px solid transparent;
@@ -196,18 +307,36 @@
       margin-left: 5vw;
       padding-top: 7.8rem;
 
+      //Bottom margin
+      .hidden-xs{
+        margin-bottom: 4rem;
+      }
+
       .logo{
         background-position: center;
         background-repeat: no-repeat;
         background-size: contain;
         filter: grayscale(100%) contrast(0%);
         -webkit-filter: grayscale(100%) contrast(0%);
-        height: 10rem;
-        margin-bottom: 6rem;
+        height: 7rem;
         transition: -webkit-filter .1s;
 
         &:hover{
           -webkit-filter: none;
+        }
+      }
+      .sponsor-button{
+        text-align: center;
+        color: #1390ec;
+        font-size: 3rem;
+        font-weight: 100;
+        margin: 25px;
+        height: 4rem;
+        line-height: 4rem;
+
+        i{
+          font-size: 1.8rem;
+          transform: translate(.5rem, -.3rem);
         }
       }
 
@@ -233,23 +362,7 @@
         text-align: center;
 
         img{
-          height: 120px;
-        }
-      }
-
-      .logo{
-        background-size: contain;
-        background-repeat: no-repeat;
-        height: 120px;
-
-
-        &#tesc-logo{
-          background-image: url(https://photos-2.dropbox.com/t/2/AAD6lrOzZYuJGZwsvM0wElIFxOrCuyJnQ0sDVszf8KBUyA/12/67849934/png/32x32/1/1434240000/0/2/tesc_blue.png/CM6drSAgASACIAMgBCAFIAYgBygB/fZhKsMM9Yo4Rve-wBXLhL9nF1M4ugeXJiukfmYiL1xI?size=1600x1200&size_mode=2);
-          background-position: right center;
-        }
-        &#mlh-logo{
-          background-image: url(http://static.mlh.io/brand-assets/logo/mlh-logo.png);
-          background-position: left center;
+          height: 75px;
         }
       }
     }
@@ -258,23 +371,22 @@
   #footer{
     background: #2d91ac;
     #footer-content{
-      height: 70px;
       .mini-logo{
         height: 50px;
         margin: 10px 0;
-      }
-      a{
-        color: white;
-        font-size: 21px;
-        font-weight: 300;
-        padding-left: 15px;
+        float:left;
       }
       div{
-        line-height: 70px;
-        height: 70px;
         color: white;
         font-size: 21px;
-        font-weight: 300;
+        font-weight: 100;
+        height: 70px;
+        letter-spacing: 1px;
+        line-height: 70px;
+        margin: 0 auto;
+        padding-right: 15px;
+        text-align: center;
+        width: 400px;
       }
     }
   }
