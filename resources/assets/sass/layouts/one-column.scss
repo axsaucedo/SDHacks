@@ -1,0 +1,100 @@
+$dashboard-color: #137bd4;
+$form-color: #26A4C5;
+$form-color-focused: #2a7aa2;
+
+.layout.one-column
+{
+  background: url(/images/scripps.jpg);
+  background-size: cover;
+  height: 100%;
+  padding-top: 50px;
+
+  .panel {
+    border-radius: 4px;
+  }
+
+  .panel-heading {
+    text-transform: uppercase;
+    font-size: $font-size-h3;
+    font-weight: 300;
+    letter-spacing: 2px;
+    text-align: center;
+
+    &.panel-logo {
+      background: #fff;
+      text-align: center;
+
+      img {
+        text-align: center;
+        max-width: 225px;
+      }
+    }
+  }
+
+  .control-label {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 1.15em;
+    font-weight: 300;
+  }
+
+  input.form-control {
+    box-shadow: none;
+    border: none;
+    background-color: $form-color;
+    transition: background-color 0.3s;
+    color: white;
+    font-weight: 100;
+
+    &:focus {
+      background-color: $form-color-focused;
+      transition: background-color 0.3s;
+    }
+  }
+
+  ::-webkit-input-placeholder {
+    color: darken(white, 10%);
+  }
+
+  :-moz-placeholder { /* Firefox 18- */
+    color: darken(white, 10%);
+  }
+
+  ::-moz-placeholder {  /* Firefox 19+ */
+    color: darken(white, 10%);
+  }
+
+  :-ms-input-placeholder {
+    color: darken(white, 10%);
+  }
+
+  .btn {
+    text-transform: uppercase;
+    font-weight: 100;
+    letter-spacing: 2px;
+
+    &.btn-boxed-white {
+      background-color: white;
+      border: 2px solid $form-color;
+      transition: border .3s;
+
+      &:hover {
+        background-color: darken(white, 5%);
+        border: 2px solid $form-color-focused;
+        transition: border .3s;
+      }
+    }
+  }
+
+  .panel-extension {
+    color: white;
+
+    a {
+      color: white;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

@@ -1,5 +1,8 @@
 //See Gulpfile for include path
+@import 'variables';
 @import 'bootstrap';
 @import 'includes/global';
 
-@import 'welcome/welcome.scss';
+@import 'welcome/welcome';
+@import 'dashboard/dashboard';
+@import 'layouts/one-column';
