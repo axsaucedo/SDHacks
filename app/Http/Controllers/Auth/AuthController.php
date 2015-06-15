@@ -137,8 +137,8 @@ class AuthController extends Controller
     {
         $gh_user = \Socialite::driver('github')->user();
 
-        $user = User::where('email', $gh_user->getEmail())->get();
-        $name = explode(' ', $user->name);
+        $user = User::where('email', $gh_user->getEmail())->first();
+        $name = explode(' ', $gh_user->name);
 
         if($user){
             \Auth::login($user);
