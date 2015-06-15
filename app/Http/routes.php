@@ -35,6 +35,13 @@ Route::group(['domain' => 'my.' . config('app.domain')], function() {
         });
     });
 
+    Route::group(['prefix' => 'auth'], function() {
+        Route::group(['prefix' => 'github'], function() {
+            Route::get('/', 'Auth\AuthController@redirectToGitHub');
+            Route::get('callback', 'Auth\AuthController@handleGitHubCallback');
+        });
+    });
+
     Route::controllers([
         'auth' => 'Auth\AuthController',
         'password' => 'Auth\PasswordController',
