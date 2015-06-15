@@ -25,15 +25,16 @@
 
                 <p class="h5">Share this code with your friends to add them to your team</p>
 
-                <hr />
+                <hr/>
 
                 <h4>Team Members:</h4>
                 @foreach($team->members as $member)
                     <p class="h5">{{ $member->fname . ' ' . $member->lname }}</p>
                 @endforeach
 
-                <hr />
+                <hr/>
 
+                <a class="btn btn-boxed-white btn-block" href="{{ action('TeamsController@apply') }}">Submit Team Project</a>
                 <a class="btn btn-boxed-white btn-block" href="{{ action('TeamsController@leave') }}">Leave Team</a>
 
             </div>
