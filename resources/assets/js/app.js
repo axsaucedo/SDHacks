@@ -1,5 +1,3 @@
-// JavaScript
-
 //Check if an element is in the viewport
 //By: Dan http://stackoverflow.com/users/139361/dan
 //Sauce: http://stackoverflow.com/questions/123999/how-to-tell-if-a-dom-element-is-visible-in-the-current-viewport/7557433#7557433
@@ -17,6 +15,20 @@ function isElementInViewport (el) {
     rect.left >= 0 &&
     rect.bottom >= 0 && /*or $(window).height() */
     rect.right <= (window.innerWidth || document.documentElement.clientWidth) /*or $(window).width() */
+    );
+}
+
+//Check if an element is in the middle of the screen
+//Adopted from isElementInViewport
+function isElementInCenter (el) {
+    //special bonus for those using jQuery
+    if (typeof jQuery === "function" && el instanceof jQuery) {
+        el = el[0];
+    }
+    var rect = el.getBoundingClientRect();
+    return (
+        rect.top <= (window.innerHeight || document.documentElement.clientHeight)/2 &&
+        rect.bottom >= (window.innerHeight || document.documentElement.clientHeight)/2
     );
 }
 
@@ -68,9 +80,8 @@ function findBootstrapEnvironment() {
 
 //Smooth scroll to any link
 //Sauce: https://css-tricks.com/snippets/jquery/smooth-scrolling/
+//TODO: Implement offset and timer through data- attributes
 $(function(){
-    console.log('!');
-    console.log($('a[href*=#]:not([href=#])'));
     $('a[href*=#]:not([href=#])').on('click', function() {
         if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
             var target = $(this.hash);

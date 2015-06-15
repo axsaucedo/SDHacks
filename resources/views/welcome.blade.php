@@ -12,7 +12,7 @@
             SDHACKS<span>2015</span>
         </div>
         <div class="dots">
-            <a href="#splash">
+            <a href="#splash-content">
                 <div class="dot splash active">
                     <div class="circle">
                     </div>
@@ -21,7 +21,7 @@
                     </div>
                 </div>
             </a>
-            <a href="#overview">
+            <a href="#overview-content">
                 <div class="dot overview">
                     <div class="circle">
                     </div>
@@ -30,7 +30,7 @@
                     </div>
                 </div>
             </a>
-            <a href="#faq">
+            <a href="#faq-content">
                 <div class="dot faq">
                     <div class="circle">
                     </div>
@@ -39,7 +39,7 @@
                     </div>
                 </div>
             </a>
-            <a href="#sponsors">
+            <a href="#sponsors-content">
                 <div class="dot sponsors">
                     <div class="circle">
                     </div>
@@ -50,16 +50,31 @@
             </a>
         </div>
     </div>
+    <div class="hidden-xs" style="width: 100vw; height: 100px; z-index:0; background-color:rgba(36,164,199,0.6); position: absolute; bottom:-100px;" >
+
+    </div>
     <section id="splash" class="container-fluid">
         <div id="splash-content">
             <div class="center-content">
                 <img id="main-logo" src="/images/logo.png" alt="SD Hacks Logo">
 
                 <div class="info-box row">
-                    <p>Find out when San Diego's Primier Hackathon Goes Live</p>
-                    <input type="text" class="col-xs-8">
-                    <div class="button register-button col-xs-4">
-                        Register
+                    <p class="hook">What if the only limit on what you could build was your imagination?</p>
+                    <p class="info">UC San Diego | October 2-4</p>
+
+                    <div class="col-md-8 col-md-offset-2 col-xs-12">
+                        <div class="button register-button col-md-4 col-md-offset-1 col-xs-12">
+                            Register
+                        </div>
+                        <div class="button register-button hidden-xs col-md-4 col-md-offset-2 col-xs-12">
+                            Sponsor
+                        </div>
+                    </div>
+
+                    <div class="social col-xs-12">
+                        <i class="fa fa-facebook"></i>
+                        <i class="fa fa-twitter"></i>
+                        <i class="fa fa-envelope"></i>
                     </div>
                 </div>
 
@@ -68,6 +83,7 @@
 
         <div class="background-layer" id="background-layer-1"></div>
         <div class="background-layer" id="background-layer-2"></div>
+        <div class="background-layer" id="background-layer-3"></div>
 
     </section>
 
@@ -81,10 +97,10 @@
                 1000+ hackers
             </div>
             <div class="bar">
-                5+ companies
+                International Competition
             </div>
             <div class="bar">
-                $1000s in prizes
+                $1000's in prizes
             </div>
             <div class="bar">
                 36 hours
@@ -97,7 +113,7 @@
             <div class="question">
                 <h4>What is a Hackathon?</h4>
                 <p>
-                    A hackathon is an event, typically lasting several days,in which a large number of people meet to
+                    A hackathon is an event, typically lasting several days, in which a large number of people meet to
                     engage in collaborative computer programming.
                 </p>
             </div>
@@ -110,8 +126,8 @@
             <div class="question">
                 <h4>How Big are the Teams?</h4>
                 <p>
-                    A hackathon is an event, typically lasting several days, in which a large number of people meet to
-                    engage in collaborative computer programming.
+                    Teams can be as large as you’d like, but only groups of up to 4 people are eligible for all prizes and
+                    team-based travel reimbursement.
                 </p>
             </div>
             <div class="question">
@@ -129,6 +145,14 @@
                 </p>
             </div>
             <div class="question">
+                <h4>How Do I Get To The Event?</h4>
+                <p>
+                    Several students will be awarded direct travel reimbursements, and there will be free bussing from
+                    major locations around California.
+                </p>
+            </div>
+
+            <div class="question">
                 <h4>What If I Have a Question Not Answered Here?</h4>
                 <p>
                     Feel free to contact our team by sending an email to <a href="mailto:support@sdhacks.io" target="_blank">support@sdhacks.io</a>!
@@ -142,35 +166,48 @@
             <div class="row">
                 <div class="col-md-8 col-md-offset-2">
                     <div class="logo" style="background-image: url(http://d2vhierclfllnw.cloudfront.net/wp-content/uploads/sites/7/2014/09/affiliate-qualcomm-logo-01352357fc32cec6fb50356b86350d401.png);"></div>
+                    <div class="hidden-xs"></div>
                 </div>
                 <div class="col-md-4 col-sm-6 col-xs-6">
                     <div class="logo" style="background-image: url(http://www.bloomberg.com/graphics/2015-cheatsheets/img/bofalogo.png)">
                     </div>
+                    <div class="hidden-xs"></div>
                 </div>
                 <div class="col-md-4 col-sm-6 col-xs-6">
                     <div class="logo" style="background-image: url(https://www.google.com/images/srpr/logo11w.png)">
                     </div>
+                    <div class="hidden-xs"></div>
                 </div>
                 <div class="col-md-4 col-sm-6 col-xs-4">
                     <div class="logo" style="background-image: url(http://www.govigaming.com/razer2.png)">
                     </div>
+                    <div class="hidden-xs"></div>
                 </div>
                 <div class="col-md-3 col-sm-6 col-xs-4">
                     <div class="logo" style="background-image: url(http://www.freelargeimages.com/wp-content/uploads/2014/11/Facebook_logo-9.png)">
                     </div>
+                    <div class="hidden-xs"></div>
                 </div>
                 <div class="col-md-3 col-sm-4 col-xs-4">
                     <div class="logo" style="background-image: url(http://i198.photobucket.com/albums/aa310/Govavi/GEAR%20STORE/VaviLogo.png)">
                     </div>
+                    <div class="hidden-xs"></div>
                 </div>
                 <div class="col-md-3 col-sm-4 col-xs-4">
                     <div class="logo" style="background-image: url(http://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Cisco_logo.svg/2000px-Cisco_logo.svg.png)">
                     </div>
+                    <div class="hidden-xs"></div>
                 </div>
                 <div class="col-md-3 col-sm-4 col-xs-4">
                     <div class="logo" style="background-image: url(http://upload.wikimedia.org/wikipedia/commons/5/5d/CBS_Interactive_Logo.PNG)">
                     </div>
+                    <div class="hidden-xs"></div>
                 </div>
+                <a href="mailto:sponsor@sdhacks.io" target="_blank">
+                    <div class="sponsor-button col-xs-12">
+                        Become a Sponsor <i class="fa fa-arrow-circle-right" style="font-size: 2rem;"></i>
+                    </div>
+                </a>
             </div>
         </div>
     </section>
@@ -182,13 +219,17 @@
             </div>
             <div class="logo-container col-xs-12 col-md-8 col-md-offset-2 hidden-xs">
                 <img alt="TESC | UC San Diego - Jacobs School of Engineering" src="/images/tesc_blue.png">
-                <img alt="MLH" src="http://static.mlh.io/brand-assets/logo/mlh-logo.png">
+                <a href="https://mlh.io/" target="_blank">
+                    <img alt="MLH" src="/images/mlh-logo.png">
+                </a>
             </div>
             <div class="logo-container col-xs-12 col-md-8 col-md-offset-2 visible-xs-block">
-                <img alt="TESC | UC San Diego - Jacobs School of Engineering" src="/images/tesc_blue.png" style="width: 100%; height: auto;">
+                <img alt="TESC | UC San Diego - Jacobs School of Engineering" src="/images/tesc_blue.png" style="width: auto; height: 56px;">
                 <br>
                 <br>
-                <img alt="MLH" src="http://static.mlh.io/brand-assets/logo/mlh-logo.png" style="height: 56px;">
+                <a href="https://mlh.io/" target="_blank">
+                    <img alt="MLH" src="/images/mlh-logo.png" style="height: 56px;">
+                </a>
             </div>
         </div>
     </section>
@@ -196,7 +237,6 @@
     <section id="footer">
         <div id="footer-content" class="container-fluid">
             <img class="mini-logo" src="/images/mini_logo_white.png">
-            <a href="mailto:support@sdhacks.io" target="_blank">support@sdhacks.io</a>
             <div>Copyright SD Hacks 2015</div>
         </div>
     </section>

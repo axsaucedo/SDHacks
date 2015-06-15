@@ -4,7 +4,13 @@
 $(function(){
 
     //TODO: Break mobile detection out of scroll event handler
-    $(window).scrolled(100, function(){
+    //TODO: Mobile detection on resize
+    var cd = false;
+    $(document).scroll(function() {
+        if (cd)
+            return;
+
+        //TODO: DEBUG THIS
         if(findBootstrapEnvironment() == 'xs'){
             //Disable animations on mobile
             activateAllAnimations();
@@ -13,23 +19,22 @@ $(function(){
             watchSections();
             watchNavBar();
         }
-    });
 
-    console.log(findBootstrapEnvironment());
+        cd = true;
+        return setTimeout((function() {
+            cd = false;
+        }), 100);
+    });
 
     //Watch and trigger animation
     var watchAnimationsSeletors = ['.bar'];
     function watchAnimations(){
         for(var es in watchAnimationsSeletors){
             var elements = $(watchAnimationsSeletors[es]);
-
             for(var i=0; i<elements.length; i++){
                 var element = elements.eq(i);
-
                 if(isElementInViewport(element))
                     element.addClass('active');
-                else
-                    element.removeClass('active');
             }
         }
     }
@@ -43,16 +48,14 @@ $(function(){
     //Watch Section for nav bar
     var sectionSelectors = ['#splash', '#overview', '#faq', '#sponsors', '#presented'];
     function watchSections(){
-        var visSections = [];
         for(var s in sectionSelectors){
             var element = $(sectionSelectors[s]);
             var navElement = $('.dot' + sectionSelectors[s].replace('#', '.'));
-            if(isElementInViewport(element)){
-                visSections.push(navElement);
+            if(isElementInCenter(element)){
+                $('.dot').removeClass('active');
+                navElement.addClass('active');
             }
         }
-        $('.dot').removeClass('active');
-        visSections[Math.floor((visSections.length-1)/2)].addClass('active');
     }
 
     function watchNavBar(){
@@ -63,6 +66,5 @@ $(function(){
             }
         });
     }
-
 
 });

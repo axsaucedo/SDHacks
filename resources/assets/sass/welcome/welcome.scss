@@ -52,7 +52,7 @@
           margin-top: 2px;
           text-transform: uppercase;
           transition: opacity .5s;
-          opacity:0;
+          opacity:.6;
 
           span{
             margin-left: -100%;
@@ -103,10 +103,10 @@
         }
 
         .info-box{
-          background: rgba(0,0,0,0.5);
-          margin-top: 1.5rem;
-          max-width: 700px;
-          padding: 15px;
+          //background: rgba(0,0,0,0.5);
+          //margin-top: 1.5rem;
+          max-width: 900px;
+          padding: 25px;
           text-align: center;
           width: 80vw;
 
@@ -114,13 +114,29 @@
           p{
             color: white;
             text-transform: uppercase;
+            margin-bottom: 2rem;
+            font-size: 1.8rem;
+            font-weight: 100;
+            letter-spacing: 6px;
+
+            .info{
+              font-size: 1.2rem;
+              margin-top: 1.4rem;
+              margin-bottom: 1.4rem;
+            }
+          }
+
+          .social{
+            color: white;
+            font-size: 3rem;
+            margin-top: 3.5rem;
+            letter-spacing: 2rem;
           }
         }
 
         .register-button{
           height: 45px;
           line-height: 45px;
-          margin: 0 auto;
         }
       }
     }
@@ -137,12 +153,17 @@
     }
     #background-layer-1{
       background-image: url(/images/circuit.png);
-      opacity: 0.3;
+      opacity: 0.2;
       z-index: -1;
     }
     #background-layer-2{
       background-image: url(/images/scripps.jpg);
+      opacity: 0.65;
       z-index: -2;
+    }
+    #background-layer-3{
+      background:rgb(0, 5, 26);
+      z-index: -3;
     }
   }
 
@@ -237,7 +258,7 @@
     width: 100vw;
 
     .question{
-      font-size: 22px;
+      font-size: 1.45rem;
       padding: 25px 0 25px 0;
       h4{
         font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -282,18 +303,36 @@
       margin-left: 5vw;
       padding-top: 7.8rem;
 
+      //Bottom margin
+      .hidden-xs{
+        margin-bottom: 4rem;
+      }
+
       .logo{
         background-position: center;
         background-repeat: no-repeat;
         background-size: contain;
         filter: grayscale(100%) contrast(0%);
         -webkit-filter: grayscale(100%) contrast(0%);
-        height: 10rem;
-        margin-bottom: 6rem;
+        height: 7rem;
         transition: -webkit-filter .1s;
 
         &:hover{
           -webkit-filter: none;
+        }
+      }
+      .sponsor-button{
+        text-align: center;
+        color: #1390ec;
+        font-size: 3rem;
+        font-weight: 100;
+        margin: 25px;
+        height: 4rem;
+        line-height: 4rem;
+
+        i{
+          font-size: 1.8rem;
+          transform: translate(.5rem, -.3rem);
         }
       }
 
@@ -319,22 +358,7 @@
         text-align: center;
 
         img{
-          height: 120px;
-        }
-      }
-
-      .logo{
-        background-size: contain;
-        background-repeat: no-repeat;
-        height: 120px;
-
-        &#tesc-logo{
-          background-image: url(https://photos-2.dropbox.com/t/2/AAD6lrOzZYuJGZwsvM0wElIFxOrCuyJnQ0sDVszf8KBUyA/12/67849934/png/32x32/1/1434240000/0/2/tesc_blue.png/CM6drSAgASACIAMgBCAFIAYgBygB/fZhKsMM9Yo4Rve-wBXLhL9nF1M4ugeXJiukfmYiL1xI?size=1600x1200&size_mode=2);
-          background-position: right center;
-        }
-        &#mlh-logo{
-          background-image: url(http://static.mlh.io/brand-assets/logo/mlh-logo.png);
-          background-position: left center;
+          height: 75px;
         }
       }
     }
@@ -346,21 +370,19 @@
       .mini-logo{
         height: 50px;
         margin: 10px 0;
-      }
-      a{
-        color: white;
-        font-size: 21px;
-        font-weight: 300;
-        padding-left: 15px;
+        float:left;
       }
       div{
         color: white;
-        float: right;
         font-size: 21px;
-        font-weight: 300;
+        font-weight: 100;
         height: 70px;
+        letter-spacing: 1px;
         line-height: 70px;
+        margin: 0 auto;
         padding-right: 15px;
+        text-align: center;
+        width: 400px;
       }
     }
   }
