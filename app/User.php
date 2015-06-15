@@ -41,4 +41,14 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
         return $this->belongsTo('App\Team');
     }
 
+    /**
+     * Returns the user's application
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function application()
+    {
+        return $this->hasOne('App\Application');
+    }
+
 }
