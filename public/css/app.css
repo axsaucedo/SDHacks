@@ -5910,6 +5910,9 @@ html {
             font-size: 3rem;
             margin-top: 3.5rem;
             letter-spacing: 2rem; }
+            #welcome-page #splash #splash-content .center-content .info-box .social a {
+              color: white;
+              text-decoration: none; }
         #welcome-page #splash #splash-content .center-content .register-button {
           height: 45px;
           line-height: 45px; }
@@ -5975,16 +5978,16 @@ html {
           margin-left: 1.5rem; }
         #welcome-page #overview #overview-content .bar:nth-of-type(1).active {
           background: #1777b0;
-          width: 90%; }
+          width: 95%; }
         #welcome-page #overview #overview-content .bar:nth-of-type(2).active {
           background: #1c86c4;
           width: 75%; }
         #welcome-page #overview #overview-content .bar:nth-of-type(3).active {
           background: #2e9bdb;
-          width: 80%; }
+          width: 85%; }
         #welcome-page #overview #overview-content .bar:nth-of-type(4).active {
           background: #51afe7;
-          width: 60%; }
+          width: 65%; }
   #welcome-page #faq {
     background: #137bd4;
     color: white;
