@@ -27,6 +27,7 @@ Route::group(['domain' => 'my.' . config('app.domain')], function() {
             Route::get('/', 'TeamsController@show');
             Route::get('/create', 'TeamsController@create');
             Route::post('/create', 'TeamsController@store');
+            Route::post('/join', 'TeamsController@join');
             Route::get('/leave', 'TeamsController@leave');
             Route::get('/apply', 'TeamsController@apply');
             Route::post('/apply', 'TeamsController@submitApplication');

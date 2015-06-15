@@ -2,8 +2,9 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
 use App\Team;
+use App\Http\Requests\JoinTeamRequest;
+
 use Illuminate\Http\Request;
 
 class TeamsController extends Controller
@@ -11,8 +12,8 @@ class TeamsController extends Controller
 
     public function __construct()
     {
-        $this->middleware('team', ['except' => ['create', 'store']]);
-        $this->middleware('noteam', ['only' => ['create', 'store']]);
+        $this->middleware('team', ['except' => ['create', 'store', 'join']]);
+        $this->middleware('noteam', ['only' => ['create', 'store', 'join']]);
     }
 
     /**
@@ -50,6 +51,41 @@ class TeamsController extends Controller
         }
 
         return redirect()->action('TeamsController@show');
+    }
+
+    /**
+     * Adds user to team based on code
+     *
+     * @param JoinTeamRequest $request
+     * @return $this|\Illuminate\Http\RedirectResponse
+     */
+    public function join(JoinTeamRequest $request)
+    {
+        $user = \Auth::user();
+        $team = Team::where('code', $request->get('code'))->first();
+
+        if(!$team)
+        {
+            return redirect()
+                ->back()
+                ->withErrors([
+                    'team' => 'The team code you entered is not valid.'
+                ]);
+        }
+
+        $user->team_id = $team->id;
+
+        if($user->save()) {
+            return redirect()
+                ->action('TeamsController@show');
+        }
+        else {
+            return redirect()
+                ->action('TeamsController@create')
+                ->withErrors([
+                    'save_fail' => 'You are unable to join the team at this time.'
+                ]);
+        }
     }
 
     /**

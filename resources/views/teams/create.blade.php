@@ -20,11 +20,20 @@
                     </div>
                 @endif
 
-                <p>Create a team to compete with your friends! You'll also have the chance to submit your team's idea to win an all inclusive trip to SD Hacks! We'll cover your travel and all the materials you need to make your idea real.</p>
+                <p>Create or join a team to compete with your friends! You'll also have the chance to submit your team's idea to win an all inclusive trip to SD Hacks! We'll cover your travel and all the materials you need to make your idea real.</p>
 
-                {!! BootForm::open(['action' => 'TeamsController@store']) !!}
-                    {!! BootForm::submit('Create Your Team', ['class' => 'btn btn-boxed-white btn-block']) !!}
+                <hr />
+
+                {!! BootForm::open(['action' => 'TeamsController@join']) !!}
+                {!! BootForm::text('code', 'Join a team', null, ['placeholder' => 'Enter your team join code']) !!}
+                {!! BootForm::submit('Join A Team', ['class' => 'btn btn-boxed-white btn-block']) !!}
                 {!! BootForm::close() !!}
+
+                <hr/>
+                {!! BootForm::open(['action' => 'TeamsController@store']) !!}
+                {!! BootForm::submit('Create Your Team', ['class' => 'btn btn-boxed-white btn-block']) !!}
+                {!! BootForm::close() !!}
+
 
             </div>
         </div>
