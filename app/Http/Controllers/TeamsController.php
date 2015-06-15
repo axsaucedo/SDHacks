@@ -65,6 +65,42 @@ class TeamsController extends Controller
     }
 
     /**
+     * Application page
+     *
+     * @return \Illuminate\View\View
+     */
+    public function apply()
+    {
+        $team = \Auth::user()->team()->with('members')->first();
+
+        return view('teams.apply', compact('team'));
+    }
+
+    /**
+     * Save application
+     *
+     * @return $this
+     */
+    public function submitApplication()
+    {
+        $team = \Auth::user()->team()->first();
+        $team->project = \Request::get('project');
+
+        if($team->save()) {
+            return redirect()
+                ->action('TeamsController@apply')
+                ->withMessage("Your team's application has been submitted!");
+        }
+        else {
+            return redirect()
+                ->action('TeamsController@apply')
+                ->withErrors([
+                    'save_fail' => 'We are currently unable to save your application at this time.'
+                ]);
+        }
+    }
+
+    /**
      * Show the form for editing the specified resource.
      *
      * @param  int $id
@@ -108,17 +144,6 @@ class TeamsController extends Controller
         }
 
         return redirect('/');
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int $id
-     * @return Response
-     */
-    public function destroy($id)
-    {
-        //
     }
 
 }
