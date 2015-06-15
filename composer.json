@@ -8,6 +8,7 @@
 		"laravel/framework": "5.0.*",
         "laravelcollective/html": "~5.0",
         "watson/bootstrap-form": "~1.0",
+        "laravel/socialite": "^2.0",
         "skovmand/mailchimp-laravel": "1.*"
 	},
 	"require-dev": {
