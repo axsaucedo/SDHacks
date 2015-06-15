@@ -5997,6 +5997,11 @@ html {
         font-size: 21px;
         font-weight: 300; }
 
+#dashboard {
+  color: white; }
+  #dashboard .panel-default {
+    color: initial; }
+
 .layout.one-column {
   background: url(/images/scripps.jpg);
   background-size: cover;

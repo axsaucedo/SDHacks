@@ -11,14 +11,14 @@
 |
 */
 
-Route::get('/', function(){
-    return view('welcome');
-});
-
 Route::group(['domain' => 'my.' . config('app.domain')], function() {
+    Route::get('/', function() {
+        return view('dashboard');
+    });
 
     // Protected area
     Route::group(['middleware' => 'auth'], function() {
+
         Route::group(['prefix' => 'team'], function() {
             Route::get('/', 'TeamsController@show');
             Route::get('/create', 'TeamsController@create');
@@ -39,4 +39,8 @@ Route::group(['domain' => 'my.' . config('app.domain')], function() {
         'auth' => 'Auth\AuthController',
         'password' => 'Auth\PasswordController',
     ]);
+});
+
+Route::get('/', function(){
+    return view('welcome');
 });
