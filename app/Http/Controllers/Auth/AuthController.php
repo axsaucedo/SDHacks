@@ -149,6 +149,7 @@ class AuthController extends Controller
                 ->action('Auth\AuthController@register')
                 ->withInput([
                     'email' => $gh_user->getEmail(),
+                    'github' => $gh_user->url,
                     'fname' => $name[0],
                     'lname' => $name[1]
                 ]);
