@@ -34,4 +34,10 @@ return [
 		'secret' => '',
 	],
 
+    'github' => [
+        'client_id' => env('GITHUB_ID',''),
+        'client_secret' => env('GITHUB_SECRET','your-github-app-secret'),
+        'redirect' => '',
+    ],
+
 ];
