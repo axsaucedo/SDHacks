@@ -1,10 +1,48 @@
-@extends('templates.one-sm-column')
+@extends('templates.form')
 
-@section('title')
-    Register
+@section('head')
+    <title>SD Hacks - Register</title>
 @endsection
 
-@section('content')
+@section('section-id')
+    register
+@endsection
+
+@section('form')
+
+<div class="col-xs-4 col-xs-offset-4">
+    <form role="form" method="POST" action="{{ url('/auth/register') }}">
+        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+
+        <div class="form-group">
+            <label class="control-label">Email</label>
+
+            <input type="email" class="form-control" name="email" value="{{ old('email') }}">
+        </div>
+
+        <div class="form-group">
+            <label class="control-label">Password</label>
+
+            <input type="password" class="form-control" name="password">
+        </div>
+
+        <div class="form-group">
+            <label class="control-label">Confirm Password</label>
+
+            <input type="password" class="form-control" name="password_confirmation">
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-boxed-white btn-lg btn-block">
+                Register
+            </button>
+        </div>
+
+    </form>
+</div>
+
+
+<!--
     <div class="panel panel-default">
         <div class="panel-heading">Register</div>
         <div class="panel-body">
@@ -18,46 +56,7 @@
                     </ul>
                 </div>
             @endif
-
-            <form role="form" method="POST" action="{{ url('/auth/register') }}">
-                <input type="hidden" name="_token" value="{{ csrf_token() }}">
-
-                <div class="form-group">
-                    <label class="control-label">First Name</label>
-
-                    <input type="text" class="form-control" name="fname" value="{{ old('fname') }}">
-                </div>
-
-                <div class="form-group">
-                    <label class="control-label">Last Name</label>
-
-                    <input type="text" class="form-control" name="lname" value="{{ old('lname') }}">
-                </div>
-
-                <div class="form-group">
-                    <label class="control-label">Email</label>
-
-                    <input type="email" class="form-control" name="email" value="{{ old('email') }}">
-                </div>
-
-                <div class="form-group">
-                    <label class="control-label">Password</label>
-
-                    <input type="password" class="form-control" name="password">
-                </div>
-
-                <div class="form-group">
-                    <label class="control-label">Confirm Password</label>
-
-                    <input type="password" class="form-control" name="password_confirmation">
-                </div>
-
-                <div class="form-group">
-                    <button type="submit" class="btn btn-boxed-white btn-lg btn-block">
-                        Register
-                    </button>
-                </div>
-            </form>
         </div>
     </div>
+    -->
 @endsection

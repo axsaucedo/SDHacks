@@ -6027,31 +6027,41 @@ input.form-control {
         font-size: 21px;
         font-weight: 300; }
 
-.layout.one-sm-column {
-  background: url(/images/scripps.jpg);
-  background-size: cover;
-  height: 100%;
-  padding-top: 50px; }
-  .layout.one-sm-column .panel {
-    border-radius: 4px; }
-  .layout.one-sm-column .panel-heading {
-    text-transform: uppercase;
-    font-size: 24px;
-    font-weight: 300;
-    letter-spacing: 2px;
-    text-align: center; }
-    .layout.one-sm-column .panel-heading.panel-logo {
-      background: #fff;
-      text-align: center; }
-      .layout.one-sm-column .panel-heading.panel-logo img {
-        text-align: center;
-        max-width: 225px; }
-  .layout.one-sm-column .panel-extension {
-    color: white; }
-    .layout.one-sm-column .panel-extension a {
-      color: white; }
-      .layout.one-sm-column .panel-extension a:hover {
-        text-decoration: underline; }
+.form-wrapper {
+  color: white;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden; }
+  .form-wrapper .form-container {
+    margin: auto;
+    width: 100%; }
+  .form-wrapper input.form-control {
+    background-color: rgba(255, 255, 255, 0.3); }
+    .form-wrapper input.form-control:focus {
+      background-color: rgba(255, 255, 255, 0.4); }
+  .form-wrapper button.btn-boxed-white {
+    color: #337ab7; }
+    .form-wrapper button.btn-boxed-white:hover {
+      color: black; }
+  .form-wrapper .background {
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%; }
+    .form-wrapper .background#background-layer-1 {
+      background-image: url(/images/scripps.jpg);
+      opacity: 0.6;
+      z-index: -1;
+      height: 100%; }
+    .form-wrapper .background#background-layer-2 {
+      background: #06001A;
+      z-index: -2; }
 
 #application {
   background-color: #26A4C5;
@@ -6087,6 +6097,6 @@ input.form-control {
     opacity: 0.4; }
   #application
 .form-high-group {
-    margin: 20% 0; }
+    margin: 35% 0; }
 
 /*# sourceMappingURL=app.css.map */

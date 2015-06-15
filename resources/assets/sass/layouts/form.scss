@@ -1,0 +1,48 @@
+.form-wrapper{
+  color: white;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+
+  .form-container{
+    margin: auto;
+    width: 100%;
+  }
+
+  input.form-control{
+    background-color: rgba(255,255,255,0.3);
+
+    &:focus{
+      background-color: rgba(255,255,255,0.4);
+    }
+  }
+
+  button.btn-boxed-white{
+    color: #337ab7;
+    &:hover{
+      color: black;
+    }
+  }
+
+  .background{
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+
+    &#background-layer-1{
+      background-image: url(/images/scripps.jpg);
+      opacity: 0.6;
+      z-index: -1;
+      height: 100%;
+    }
+    &#background-layer-2{
+      background: #06001A;
+      z-index: -2;
+    }
+  }
+}
