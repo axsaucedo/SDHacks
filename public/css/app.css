@@ -5898,11 +5898,11 @@ html {
             color: white;
             text-transform: uppercase;
             margin-bottom: 2rem;
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             font-weight: 100;
             letter-spacing: 6px; }
-            #welcome-page #splash #splash-content .center-content .info-box p .info {
-              font-size: 1.2rem;
+            #welcome-page #splash #splash-content .center-content .info-box p.info {
+              font-size: 1rem;
               margin-top: 1.4rem;
               margin-bottom: 1.4rem; }
           #welcome-page #splash #splash-content .center-content .info-box .social {
