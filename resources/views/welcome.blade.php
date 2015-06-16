@@ -74,9 +74,9 @@
                         <a href="{{ url('/auth/register') }}" class="button register-button col-md-4 col-md-offset-1 col-xs-12">
                             Register
                         </a>
-                        <div class="button register-button hidden-xs col-md-4 col-md-offset-2 col-xs-12">
+                        <a href="mailto:sponsor@sdhacks.io" target="_blank" class="button register-button hidden-xs col-md-4 col-md-offset-2 col-xs-12">
                             Sponsor
-                        </div>
+                        </a>
                     </div>
 
                     <div class="social col-xs-12">
