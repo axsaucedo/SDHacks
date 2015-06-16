@@ -32,9 +32,9 @@
         flex-direction: column;
         float: left;
         height: 40px;
-        margin: 10px 15px;
+        margin: 20px 15px;
         text-align: center;
-        width: 50px;
+        width: 60px;
         .circle{
           background-color: white;
           border-radius: 100%;
@@ -171,9 +171,8 @@
     }
   }
 
-  /* Progress Bar Section */
+  #innovation{
 
-  #overview{
     $overview-bg: #005a8f;
     //AA Slanted Edges on Mozilla
     -moz-transform: scale(.9999);
@@ -189,7 +188,49 @@
     position: relative;
     z-index: 5;
 
+    #innovation-content{
+      width: 100vw;
+
+      .section-title{
+        font-size: 2rem;
+        color: white;
+        font-weight: 100;
+        text-align: center;
+        margin-top: 2rem;
+        padding: 1.5rem;
+        letter-spacing: .125rem;
+        text-transform: uppercase;
+      }
+      .content{
+        margin: 0 auto;
+        font-size: 1.5rem;
+        font-weight: 100;
+        padding: 2rem 0 4rem;
+        letter-spacing: .04rem;
+      }
+    }
+  }
+
+  /* Progress Bar Section */
+
+  #overview{
+    $overview-bg: #053A59;
+    //AA Slanted Edges on Mozilla
+    -moz-transform: scale(.9999);
+
+    border-bottom: 75px solid transparent;
+    border-left: 100vw solid $overview-bg;
+    border-top: 75px solid transparent;
+    box-sizing: content-box;
+    color: white;
+    //height: 100vh;
+    margin-top: -80px;
+    padding: 0;
+    position: relative;
+    z-index: 5;
+
     #overview-content{
+      margin-left: -100vw;
       width: 100vw;
 
       .section-title{
@@ -254,7 +295,8 @@
   /* FAQ List */
 
   #faq{
-    background: url(/images/faq-bg.svg);//#137bd4;
+    background: #137bd4;
+    background-image: url(/images/faq-bg.png);//#137bd4;
     background-size: cover;
     background-repeat: no-repeat;
     color: white;

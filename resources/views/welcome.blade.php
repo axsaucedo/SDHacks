@@ -21,6 +21,15 @@
                     </div>
                 </div>
             </a>
+            <a href="#innovation-content">
+                <div class="dot innovation">
+                    <div class="circle">
+                    </div>
+                    <div class="title">
+                        <span>Innovate</span>
+                    </div>
+                </div>
+            </a>
             <a href="#overview-content">
                 <div class="dot overview">
                     <div class="circle">
@@ -51,7 +60,6 @@
         </div>
     </div>
     <div class="hidden-xs" style="width: 100vw; height: 100px; z-index:0; background-color:rgba(36,164,199,0.6); position: absolute; bottom:-100px;" >
-
     </div>
     <section id="splash" class="container-fluid">
         <div id="splash-content">
@@ -91,6 +99,19 @@
         <div class="background-layer" id="background-layer-2"></div>
         <div class="background-layer" id="background-layer-3"></div>
 
+    </section>
+
+    <section id="innovation">
+        <div id="innovation-content" class="container-fluid">
+            <div class="section-title">
+                Let Innovation Shine
+            </div>
+            <div class="content container">
+                Until July 1st, SD Hacks will be listening to you for the best ideas you can dream of. The top 5 ideas with
+                their teams will have an all-expenses paid trip to San Diego, as well as all the supplies the hackers need
+                waiting for them at the event. Consider this the real-life gateway into your imagination.
+            </div>
+        </div>
     </section>
 
     <section id="overview">

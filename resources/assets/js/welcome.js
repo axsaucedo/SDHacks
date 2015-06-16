@@ -46,7 +46,7 @@ $(function(){
     }
 
     //Watch Section for nav bar
-    var sectionSelectors = ['#splash', '#overview', '#faq', '#sponsors', '#presented'];
+    var sectionSelectors = ['#splash', '#innovation', '#overview', '#faq', '#sponsors', '#presented'];
     function watchSections(){
         for(var s in sectionSelectors){
             var element = $(sectionSelectors[s]);
@@ -62,7 +62,7 @@ $(function(){
         $('#nav-bar').affix({
             offset:{
                 //Assumes overview is the first section after splash
-                top: $('#overview').offset().top - $('#nav-bar').height()
+                top: $('#innovation').offset().top - $('#nav-bar').height()
             }
         });
     }
