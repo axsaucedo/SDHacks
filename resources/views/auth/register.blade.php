@@ -10,7 +10,7 @@
 
 @section('form')
 
-<div class="col-xs-4 col-xs-offset-4">
+<div class="col-xs-10 col-xs-offset-1 col-md-4 col-md-offset-4">
     @if (count($errors) > 0)
         <div class="alert alert-danger">
             <strong>Whoops!</strong> There were some problems with your input.<br><br>
