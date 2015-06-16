@@ -6,6 +6,7 @@ use Illuminate\Contracts\Auth\Registrar;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 use Illuminate\Http\Request;
 use App\User;
+use Mailchimp;
 
 class AuthController extends Controller
 {
@@ -23,6 +24,8 @@ class AuthController extends Controller
 
     protected $redirectTo = '/';
 
+    protected $mailchimp;
+
     use AuthenticatesAndRegistersUsers;
 
     /**
@@ -30,14 +33,15 @@ class AuthController extends Controller
      *
      * @param  \Illuminate\Contracts\Auth\Guard $auth
      * @param  \Illuminate\Contracts\Auth\Registrar $registrar
-     * @return void
+     * @param Mailchimp $mailchimp
      */
-    public function __construct(Guard $auth, Registrar $registrar)
+    public function __construct(Guard $auth, Registrar $registrar, Mailchimp $mailchimp)
     {
         $this->auth = $auth;
         $this->registrar = $registrar;
+        $this->mailchimp = $mailchimp;
 
-        $this->middleware('guest', ['except' => ['getLogout', 'getConfirm']]);
+        $this->middleware('guest', ['except' => ['getLogout', 'getConfirm', 'edit', 'update', 'redirectToGitHub', 'handleGitHubCallback']]);
     }
 
     /**
@@ -93,6 +97,24 @@ class AuthController extends Controller
     }
 
     /**
+     * Settings page
+     *
+     * @return \Illuminate\View\View
+     */
+    public function edit()
+    {
+        return view('auth.settings');
+    }
+
+    public function update()
+    {
+        \Auth::user()->update(\Request::all());
+        return redirect()
+            ->back()
+            ->withMessage('Your settings have been saved!');
+    }
+
+    /**
      * Confirm user
      *
      * @param $code
@@ -104,8 +126,35 @@ class AuthController extends Controller
         $user->confirmation_code = '';
         if($user->save()) {
             \Auth::login($user);
+            if(env('APP_ENV') != 'local')
+                $this->addEmailToList($user->email);
         }
         return true;
+    }
+
+    /**
+     * Access the mailchimp lists API
+     */
+    public function addEmailToList($email)
+    {
+        $list_id = 630969;
+
+        try {
+            $this->mailchimp
+                ->lists
+                ->subscribe(
+                    $list_id,
+                    ['email' => $email]
+                );
+            return true;
+        } catch (\Mailchimp_List_AlreadySubscribed $e) {
+            $message = "User {$email} is already subscribed!";
+            \Log::warning($message);
+            return false;
+        } catch (\Mailchimp_Error $e) {
+            \Log::error($e);
+            return false;
+        }
     }
 
     /**
@@ -122,6 +171,67 @@ class AuthController extends Controller
 
         \Session::flash('message', 'Your confirmation code is no longer active or is incorrect');
         return redirect('AuthController@getConfirm');
+    }
+
+    /**
+     * Redirect the user to the GitHub authentication page.
+     *
+     * @return Response
+     */
+    public function redirectToGitHub()
+    {
+        return \Socialite::driver('github')->redirect();
+    }
+
+    /**
+     * Obtain the user information from GitHub.
+     *
+     * @return Response
+     */
+    public function handleGitHubCallback()
+    {
+        $gh_user = \Socialite::driver('github')->user();
+
+        if(\Auth::check())
+        {
+            $user = \Auth::user();
+            $user->github_id = $gh_user->getId();
+            $user->github_token = $gh_user->token;
+            $user->save();
+            return redirect()->back()->withMessage('Your GitHub account has been connected!');
+        }
+
+        $user = User::where('github_id', $gh_user->getId())->first();
+        $name = explode(' ', $gh_user->name);
+
+        if($user){
+            \Auth::login($user);
+            $user->github_token = $gh_user->token;
+            $user->save();
+
+            return redirect()->intended($this->redirectPath());
+        }
+        else {
+            $user = User::where('email', $gh_user->getEmail())->first();
+
+            if($user) {
+                return redirect()
+                    ->back()
+                    ->withErrors([
+                       'github' => 'You have not authorized your SD Hacks account for GitHub. Please log in to do so.'
+                    ]);
+            }
+            else {
+                return redirect()
+                    ->action('Auth\AuthController@register')
+                    ->withInput([
+                        'email' => $gh_user->getEmail(),
+                        'github' => $gh_user->url,
+                        'fname' => $name[0],
+                        'lname' => $name[1]
+                    ]);
+            }
+        }
     }
 
 }

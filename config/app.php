@@ -154,6 +154,8 @@ return [
         'Watson\BootstrapForm\BootstrapFormServiceProvider',
         'Barryvdh\Debugbar\ServiceProvider',
         'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider',
+        Laravel\Socialite\SocialiteServiceProvider::class,
+        'Skovmand\Mailchimp\MailchimpServiceProvider',
 
 	],
 
@@ -207,6 +209,7 @@ return [
         'Html' => 'Collective\Html\HtmlFacade',
         'BootForm' => 'Watson\BootstrapForm\Facades\BootstrapForm',
         'Debugbar' => 'Barryvdh\Debugbar\Facade',
+        'Socialite' => Laravel\Socialite\Facades\Socialite::class,
 
 	],
 

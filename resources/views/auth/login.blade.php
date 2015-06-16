@@ -51,18 +51,16 @@
             </div>
         </div>
 
-    </form>
-</div>
+                <br />
 
+                <div class="row">
+                    <div class="col-xs-12">
+                        <a href="{{ action('Auth\AuthController@redirectToGitHub') }}" class="btn btn-boxed-white btn-lg btn-block">
+                            <i class="fa fa-lg fa-github"></i> Login/Register with GitHub</a>
+                    </div>
+                </div>
 
-
-<!--
-
-    <div class="panel panel-default">
-        <div class="panel-heading panel-logo text-center">
-            <img src="{{ asset('/images/logo.png') }}" alt="SD Hacks Logo"/>
-        </div>
-        <div class="panel-body">
+            </form>
         </div>
     </div>
 
@@ -70,6 +68,4 @@
         <a href="{{ url('/password/email') }}">Forgot Your
             Password?</a>
     </div>
-
- -->
 @endsection
