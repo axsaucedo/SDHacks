@@ -35,6 +35,7 @@
 
                 <a href="{{ action('Auth\AuthController@redirectToGitHub') }}" class="btn btn-boxed-white btn-lg btn-block">
                     <i class="fa fa-lg fa-github"></i> Connect GitHub</a>
+                <a class="btn btn-boxed-white btn-block" href="{{ route('dashboard') }}">Go Back</a>
         </div>
     </div>
 @endsection
