@@ -3,7 +3,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <meta property="og:image" content="{{ asset('/images/sdhacks_city.png') }}" />
-
+<meta property="og:title" content="SD Hacks Registration is Live">
+<meta property="og:description" content="What if the only limit on what you could build was your imagination?">
 
 <link href="/css/app.css" rel="stylesheet">
 
