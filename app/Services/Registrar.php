@@ -17,7 +17,16 @@ class Registrar implements RegistrarContract {
 		return Validator::make($data, [
 			'email' => 'required|email|max:255|unique:users',
 			'password' => 'required|confirmed|min:6',
-		]);
+		],
+        [
+            'required' => 'The :attribute field is required.',
+            'unique' => 'Your :attribute has already been taken!',
+            'same'    => 'The :attribute and :other must match.',
+            'size'    => 'The :attribute must be exactly :size.',
+            'between' => 'The :attribute must be between :min - :max.',
+            'in'      => 'The :attribute must be one of the following types: :values',
+            'confirmed'      => 'The :attribute must be confirmed',
+        ]);
 	}
 
 	/**

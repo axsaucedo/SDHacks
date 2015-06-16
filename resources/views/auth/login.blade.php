@@ -53,13 +53,13 @@
 
             <br/>
 
-            <div class="row">
-                <div class="col-xs-12">
-                    <a href="{{ action('Auth\AuthController@redirectToGitHub') }}"
-                       class="btn btn-boxed-white btn-lg btn-block">
-                        <i class="fa fa-lg fa-github"></i> Login/Register with GitHub</a>
-                </div>
-            </div>
+            {{--<div class="row">--}}
+                {{--<div class="col-xs-12">--}}
+                    {{--<a href="{{ action('Auth\AuthController@redirectToGitHub') }}"--}}
+                       {{--class="btn btn-boxed-white btn-lg btn-block">--}}
+                        {{--<i class="fa fa-lg fa-github"></i> Login/Register with GitHub</a>--}}
+                {{--</div>--}}
+            {{--</div>--}}
 
         </form>
 
