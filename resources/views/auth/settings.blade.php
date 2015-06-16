@@ -25,13 +25,13 @@
                 </div>
             @endif
 
-            {!! BootForm::open(['action' => 'Auth\AuthController@update']) !!}
-            {!! BootForm::text('email', 'Email') !!}
-            {!! BootForm::text('password', 'Password') !!}
-            {!! BootForm::text('password_confirmation', 'Confirm Password') !!}
-            {!! BootForm::submit('Save', ['class' => 'btn btn-block btn-lg btn-boxed-white']) !!}
+            {{--{!! BootForm::open(['action' => 'Auth\AuthController@update']) !!}--}}
+            {{--{!! BootForm::text('email', 'Email') !!}--}}
+            {{--{!! BootForm::text('password', 'Password') !!}--}}
+            {{--{!! BootForm::text('password_confirmation', 'Confirm Password') !!}--}}
+            {{--{!! BootForm::submit('Save', ['class' => 'btn btn-block btn-lg btn-boxed-white']) !!}--}}
 
-            <hr />
+            {{--<hr />--}}
 
                 <a href="{{ action('Auth\AuthController@redirectToGitHub') }}" class="btn btn-boxed-white btn-lg btn-block">
                     <i class="fa fa-lg fa-github"></i> Connect GitHub</a>
