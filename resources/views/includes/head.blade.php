@@ -2,6 +2,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
+<meta property="og:image" content="{{ asset('/images/sdhacks_city.png') }}" />
+
 
 <link href="/css/app.css" rel="stylesheet">
 
