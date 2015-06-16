@@ -77,6 +77,11 @@ class AuthController extends Controller
                 }
             );
 
+            // Generate token to identify user
+            $user_token = str_random(60) . $user->id;
+            $user->token = $user_token;
+            $user->save();
+
             return view('auth.success');
         } else {
             \Session::flash('message', 'Your account could not be created. Please try again.');
