@@ -10,7 +10,7 @@
         "watson/bootstrap-form": "~1.0",
         "laravel/socialite": "^2.0",
         "skovmand/mailchimp-laravel": "1.*",
-        "guzzlehttp/guzzle": "~5.3|~6.0"
+        "guzzlehttp/guzzle": "~5.3"
 	},
 	"require-dev": {
 		"phpunit/phpunit": "~4.0",
