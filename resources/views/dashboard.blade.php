@@ -7,7 +7,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
-                    <h1 class="text-center">Welcome, {{ \Auth::user()->fname }}!</h1>
+                    <h1 class="text-center">Welcome, hacker!</h1>
 
                     <div class="row">
                         <div class="col-md-6">
