@@ -200,7 +200,7 @@ class AuthController extends Controller
             $user->github_id = $gh_user->getId();
             $user->github_token = $gh_user->token;
             $user->save();
-            return redirect()->back()->withMessage('Your GitHub account has been connected!');
+            return redirect()->action('Auth\AuthController@edit')->withMessage('Your GitHub account has been connected!');
         }
 
         $user = User::where('github_id', $gh_user->getId())->first();
