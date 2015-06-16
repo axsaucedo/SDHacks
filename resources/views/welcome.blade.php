@@ -21,7 +21,7 @@
                     </div>
                 </div>
             </a>
-            <a href="#innovation-content">
+            <a href="#innovation-content" data-offset="-160">
                 <div class="dot innovation">
                     <div class="circle">
                     </div>
@@ -30,7 +30,7 @@
                     </div>
                 </div>
             </a>
-            <a href="#overview-content">
+            <a href="#overview-content" data-offset="-75">
                 <div class="dot overview">
                     <div class="circle">
                     </div>
@@ -39,7 +39,7 @@
                     </div>
                 </div>
             </a>
-            <a href="#faq-content">
+            <a href="#faq-content" data-offset="-75">
                 <div class="dot faq">
                     <div class="circle">
                     </div>
@@ -48,7 +48,7 @@
                     </div>
                 </div>
             </a>
-            <a href="#sponsors-content">
+            <a href="#sponsors-content" data-offset="-75">
                 <div class="dot sponsors">
                     <div class="circle">
                     </div>
@@ -191,6 +191,7 @@
     <section id="sponsors">
         <div id="sponsors-content" class="container-fluid">
             <div class="row">
+            <!--
                 <div class="col-md-8 col-md-offset-2">
                     <div class="logo" style="background-image: url(http://d2vhierclfllnw.cloudfront.net/wp-content/uploads/sites/7/2014/09/affiliate-qualcomm-logo-01352357fc32cec6fb50356b86350d401.png);"></div>
                     <div class="hidden-xs"></div>
@@ -230,6 +231,7 @@
                     </div>
                     <div class="hidden-xs"></div>
                 </div>
+                -->
                 <a href="mailto:sponsor@sdhacks.io" target="_blank">
                     <div class="sponsor-button col-xs-12">
                         Become a Sponsor <i class="fa fa-arrow-circle-right" style="font-size: 2rem;"></i>
