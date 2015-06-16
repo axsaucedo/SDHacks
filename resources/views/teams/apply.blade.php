@@ -31,6 +31,10 @@
                 {!! BootForm::submit('Submit Application', ['class' => 'btn btn-boxed-white btn-block']) !!}
                 {!! BootForm::close() !!}
 
+                <hr />
+
+                <a class="btn btn-boxed-white btn-block" href="{{ action('TeamsController@show') }}">Go Back</a>
+
             </div>
         </div>
     </div>

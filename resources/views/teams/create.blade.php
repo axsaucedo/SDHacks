@@ -34,6 +34,10 @@
                 {!! BootForm::submit('Create Your Team', ['class' => 'btn btn-boxed-white btn-block']) !!}
                 {!! BootForm::close() !!}
 
+                <hr />
+
+                <a class="btn btn-boxed-white btn-block" href="{{ route('dashboard') }}">Go Back</a>
+
 
             </div>
         </div>

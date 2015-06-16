@@ -37,6 +37,9 @@
                 <a class="btn btn-boxed-white btn-block" href="{{ action('TeamsController@apply') }}">Submit Team Project</a>
                 <a class="btn btn-boxed-white btn-block" href="{{ action('TeamsController@leave') }}">Leave Team</a>
 
+                <hr />
+
+                <a class="btn btn-boxed-white btn-block" href="{{ route('dashboard') }}">Go Back</a>
             </div>
         </div>
     </div>

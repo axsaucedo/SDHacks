@@ -14,9 +14,9 @@
 Route::group(['domain' => 'my.' . config('app.domain')], function() {
     // Protected area
     Route::group(['middleware' => 'auth'], function() {
-        Route::get('/', function() {
+        Route::get('/', ['as' => 'dashboard', function() {
             return view('dashboard');
-        });
+        }]);
 
         Route::group(['prefix' => 'team'], function() {
             Route::get('/', 'TeamsController@show');
