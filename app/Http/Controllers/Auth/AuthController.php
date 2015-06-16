@@ -77,7 +77,7 @@ class AuthController extends Controller
                 'emails.confirmAccount',
                 $data,
                 function ($message) use ($user) {
-                    $message->to($user->email, 'Please confirm your email');
+                    $message->to($user->email)->subject('Please confirm your email');
                     $message->getHeaders()->addTextHeader('X-Mailgun-Campaign-Id', 'email_confirmation');
                 }
             );
