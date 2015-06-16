@@ -15,8 +15,8 @@ return [
 	*/
 
 	'mailgun' => [
-		'domain' => '',
-		'secret' => '',
+		'domain' => env('MAILGUN_DOMAIN','sdhacks.io'),
+		'secret' => env('MAILGUN_SECRET',''),
 	],
 
 	'mandrill' => [
