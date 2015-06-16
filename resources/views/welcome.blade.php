@@ -63,9 +63,9 @@
                     <p class="info">UC San Diego | October 2-4</p>
 
                     <div class="col-md-8 col-md-offset-2 col-xs-12">
-                        <div class="button register-button col-md-4 col-md-offset-1 col-xs-12">
+                        <a href="{{ url('/auth/register') }}" class="button register-button col-md-4 col-md-offset-1 col-xs-12">
                             Register
-                        </div>
+                        </a>
                         <div class="button register-button hidden-xs col-md-4 col-md-offset-2 col-xs-12">
                             Sponsor
                         </div>
