@@ -1,0 +1,12 @@
+.panel-extension {
+  color: white;
+  margin-top: 10px;
+
+  a {
+    color: white;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
