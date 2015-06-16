@@ -3,6 +3,10 @@
         <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
 
+        <title>SD Hacks - Under Maintenance</title>
+
+        <meta property="og:image" content="{{ asset('/images/sdhacks_city.png') }}" />
+
 		<style>
 			body {
 				margin: 0;
