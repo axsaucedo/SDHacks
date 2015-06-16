@@ -122,6 +122,8 @@ class AuthController extends Controller
      */
     public function confirm($code) {
         $user = User::where('confirmation_code', '=', $code)->first();
+        if(!$user)
+            return redirect()->action('Auth\AuthController@getLogin');
         $user->confirmed = 1;
         $user->confirmation_code = '';
         if($user->save()) {
