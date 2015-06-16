@@ -224,14 +224,13 @@ class AuthController extends Controller
                     ]);
             }
             else {
-                return redirect()
-                    ->action('Auth\AuthController@register')
-                    ->withInput([
-                        'email' => $gh_user->getEmail(),
-                        'github' => $gh_user->url,
-                        'fname' => $name[0],
-                        'lname' => $name[1]
-                    ]);
+                $user = new User;
+                $user->email = $gh_user->getEmail();
+                $user->github_token = $gh_user->token;
+                $user->github_id = $gh_user->getId();
+                $user->save();
+
+                return view('auth.success');
             }
         }
     }
