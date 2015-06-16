@@ -128,8 +128,8 @@ class AuthController extends Controller
         $user->confirmation_code = '';
         if($user->save()) {
             \Auth::login($user);
-            if(env('APP_ENV') != 'local')
-                $this->addEmailToList($user->email);
+//            if(env('APP_ENV') == 'production')
+//                $this->addEmailToList($user->email);
         }
         return true;
     }
