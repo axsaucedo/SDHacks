@@ -78,8 +78,14 @@ class AuthController extends Controller
                 $data,
                 function ($message) use ($user) {
                     $message->to($user->email, 'Please activate your account');
+                    $message->getHeaders()->addTextHeader('X-Mailgun-Campaign-Id', 'email_confirmation');
                 }
             );
+
+            // Generate token to identify user
+            $user_token = str_random(60) . $user->id;
+            $user->token = $user_token;
+            $user->save();
 
             return view('auth.success');
         } else {

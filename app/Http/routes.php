@@ -12,12 +12,11 @@
 */
 
 Route::group(['domain' => 'my.' . config('app.domain')], function() {
-    Route::get('/', function() {
-        return view('dashboard');
-    });
-
     // Protected area
     Route::group(['middleware' => 'auth'], function() {
+        Route::get('/', function() {
+            return view('dashboard');
+        });
 
         Route::group(['prefix' => 'team'], function() {
             Route::get('/', 'TeamsController@show');

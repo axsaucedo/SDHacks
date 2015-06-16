@@ -5792,7 +5792,11 @@ button.close {
 html {
   font-size: 16px;
   font-family: 'Open Sans', sans-serif;
-  color: #313131; }
+  color: #313131;
+  height: 100%; }
+
+body {
+  height: 100%; }
 
 @media (max-width: 420px) {
   html {
@@ -5805,6 +5809,36 @@ html {
   text-align: center; }
   .button:hover {
     background-color: #2a7aa2; }
+
+.btn {
+  text-transform: uppercase;
+  font-weight: 100;
+  letter-spacing: 2px; }
+  .btn.btn-boxed-white {
+    background-color: white;
+    border: 2px solid #26A4C5;
+    transition: border 0.3s; }
+    .btn.btn-boxed-white:hover {
+      background-color: #f2f2f2;
+      border: 2px solid #2a7aa2;
+      transition: border 0.3s; }
+
+.control-label {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 1.15em;
+  font-weight: 300; }
+
+input.form-control {
+  box-shadow: none;
+  border: none;
+  background-color: #26A4C5;
+  transition: background-color 0.3s;
+  color: white;
+  font-weight: 100; }
+  input.form-control:focus {
+    background-color: #2a7aa2;
+    transition: background-color 0.3s; }
 
 #welcome-page {
   /* Progress Bar Section */
@@ -5910,6 +5944,9 @@ html {
             font-size: 3rem;
             margin-top: 3.5rem;
             letter-spacing: 2rem; }
+            #welcome-page #splash #splash-content .center-content .info-box .social a {
+              color: white;
+              text-decoration: none; }
         #welcome-page #splash #splash-content .center-content .register-button {
           height: 45px;
           line-height: 45px; }
@@ -5975,18 +6012,20 @@ html {
           margin-left: 1.5rem; }
         #welcome-page #overview #overview-content .bar:nth-of-type(1).active {
           background: #1777b0;
-          width: 90%; }
+          width: 95%; }
         #welcome-page #overview #overview-content .bar:nth-of-type(2).active {
           background: #1c86c4;
           width: 75%; }
         #welcome-page #overview #overview-content .bar:nth-of-type(3).active {
           background: #2e9bdb;
-          width: 80%; }
+          width: 85%; }
         #welcome-page #overview #overview-content .bar:nth-of-type(4).active {
           background: #51afe7;
-          width: 60%; }
+          width: 65%; }
   #welcome-page #faq {
-    background: #137bd4;
+    background: url(/images/faq-bg.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
     color: white;
     margin-top: -75px;
     padding: 95px 0 110px 0;
@@ -6079,6 +6118,90 @@ html {
       text-align: center;
       width: 400px; }
 
+.form-wrapper {
+  color: white;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden; }
+  .form-wrapper .form-container {
+    margin: auto;
+    width: 100%; }
+  .form-wrapper input.form-control {
+    background-color: rgba(255, 255, 255, 0.3); }
+    .form-wrapper input.form-control:focus {
+      background-color: rgba(255, 255, 255, 0.4); }
+  .form-wrapper button.btn-boxed-white {
+    color: #337ab7; }
+    .form-wrapper button.btn-boxed-white:hover {
+      color: black; }
+  .form-wrapper .background {
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%; }
+    .form-wrapper .background#background-layer-1 {
+      background-image: url(/images/scripps.jpg);
+      opacity: 0.6;
+      z-index: -1;
+      height: 100%; }
+    .form-wrapper .background#background-layer-2 {
+      background: #06001A;
+      z-index: -2; }
+
+#application {
+  background-color: #26A4C5;
+  min-height: 100%; }
+  #application .header {
+    background: url(/images/scripps.jpg);
+    background-size: cover;
+    height: 100%;
+    color: white;
+    text-align: center; }
+    #application .header h1 {
+      text-transform: uppercase;
+      font-weight: 300; }
+    #application .header .content {
+      position: relative;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+          -ms-transform: translateY(-50%);
+              transform: translateY(-50%); }
+  #application .form-high-group {
+    padding: 15% 0; }
+    #application .form-high-group .control-label {
+      color: black;
+      opacity: 0.4;
+      transition: opacity 0.3s, color 0.3s; }
+    #application .form-high-group .form-control {
+      background: white;
+      color: black;
+      opacity: 0.4;
+      transition: opacity 0.3s; }
+      #application .form-high-group .form-control:focus {
+        background: white;
+        opacity: 1;
+        transition: opacity 0.3s; }
+    #application .form-high-group.active .control-label {
+      color: white;
+      opacity: 0.8; }
+    #application .form-high-group.active .form-control {
+      background: white;
+      color: black;
+      opacity: 0.4;
+      transition: opacity 0.3s; }
+      #application .form-high-group.active .form-control:focus {
+        background: white;
+        opacity: 1;
+        transition: opacity 0.3s; }
+    #application .form-high-group:last-of-type {
+      margin-bottom: 20%; }
+
 #dashboard {
   color: white; }
   #dashboard .panel-default {
@@ -6103,43 +6226,6 @@ html {
       .layout.one-column .panel-heading.panel-logo img {
         text-align: center;
         max-width: 225px; }
-  .layout.one-column .control-label {
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-size: 1.15em;
-    font-weight: 300; }
-  .layout.one-column input.form-control {
-    box-shadow: none;
-    border: none;
-    background-color: #26A4C5;
-    transition: background-color 0.3s;
-    color: white;
-    font-weight: 100; }
-    .layout.one-column input.form-control:focus {
-      background-color: #2a7aa2;
-      transition: background-color 0.3s; }
-  .layout.one-column ::-webkit-input-placeholder {
-    color: #e6e6e6; }
-  .layout.one-column :-moz-placeholder {
-    /* Firefox 18- */
-    color: #e6e6e6; }
-  .layout.one-column ::-moz-placeholder {
-    /* Firefox 19+ */
-    color: #e6e6e6; }
-  .layout.one-column :-ms-input-placeholder {
-    color: #e6e6e6; }
-  .layout.one-column .btn {
-    text-transform: uppercase;
-    font-weight: 100;
-    letter-spacing: 2px; }
-    .layout.one-column .btn.btn-boxed-white {
-      background-color: white;
-      border: 2px solid #26A4C5;
-      transition: border 0.3s; }
-      .layout.one-column .btn.btn-boxed-white:hover {
-        background-color: #f2f2f2;
-        border: 2px solid #2a7aa2;
-        transition: border 0.3s; }
   .layout.one-column .panel-extension {
     color: white; }
     .layout.one-column .panel-extension a {

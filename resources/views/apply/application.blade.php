@@ -1,60 +1,28 @@
-@extends('layout')
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <!--Add the title of your typeform below-->
+    <title>SD Hacks - Registration</title>
 
-@section('title')
-    Apply for SD Hacks
-@endsection
-
-@section('content')
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <div class="panel panel-default">
-                    <div class="panel-heading">Apply</div>
-                    <div class="panel-body">
-                        @if (count($errors) > 0)
-                            <div class="alert alert-danger">
-                                <strong>Whoops!</strong> There were some problems with your input.<br><br>
-                                <ul>
-                                    @foreach ($errors->all() as $error)
-                                        <li>{{ $error }}</li>
-                                    @endforeach
-                                </ul>
-                            </div>
-                        @endif
-
-                        @if (\Session::has('message'))
-                            <div class="alert alert-danger">
-                                {{ \Session::get('message') }}
-                            </div>
-                        @endif
-
-                        {!! BootForm::horizontal(['store' => 'ApplicationsController@store']) !!}
-
-                        {{-- Profile --}}
-                        {!! BootForm::text('gender') !!}
-                        {!! BootForm::text('phone') !!}
-                        {!! BootForm::text('dob', 'Date of Birth') !!}
-                        {!! BootForm::text('major') !!}
-                        {!! BootForm::text('school') !!}
-                        {!! BootForm::text('github', 'GitHub URL') !!}
-                        {!! BootForm::text('linkedin', 'LinkedIn URL') !!}
-                        {!! BootForm::text('website', 'Personal Website') !!}
-                        {!! BootForm::textarea('website', 'Food Allergies') !!}
-
-                        {{-- Application --}}
-                        {!! BootForm::text('year') !!}
-                        {!! BootForm::text('team_role', 'Team Role') !!}
-                        {!! BootForm::checkbox('traveling') !!}
-                        {!! BootForm::text('state') !!}
-                        {!! BootForm::checkbox('reimbursement') !!}
-                        {!! BootForm::checkbox('busing', 'Busing') !!}
-
-                        {!! BootForm::submit() !!}
-
-                        {!! BootForm::close() !!}
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-@endsection
+    <!--CSS styles that ensure your typeform takes up all the available screen space (DO NOT EDIT!)-->
+    <style type="text/css">
+        html{
+            margin: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+        iframe{
+            position: absolute;
+            left:0;
+            right:0;
+            bottom:0;
+            top:0;
+            border:0;
+        }
+    </style>
+</head>
+<body>
+<iframe id="typeform-full" width="100%" height="100%" frameborder="0" src="https://sdhacks.typeform.com/to/QtyX54?token={{ \Auth::user()->token }}&amp;embed=full"></iframe>
+<script type="text/javascript" src="https://s3-eu-west-1.amazonaws.com/share.typeform.com/embed.js"></script>
+</body>
+</html>

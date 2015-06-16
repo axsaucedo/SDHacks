@@ -131,6 +131,10 @@
             font-size: 3rem;
             margin-top: 3.5rem;
             letter-spacing: 2rem;
+              a{
+                color: white;
+                text-decoration: none;
+              }
           }
         }
 
@@ -229,7 +233,7 @@
 
         &:nth-of-type(1).active{
           background: #1777b0;
-          width: 90%;
+          width: 95%;
         }
         &:nth-of-type(2).active{
           background: #1c86c4;
@@ -237,11 +241,11 @@
         }
         &:nth-of-type(3).active{
           background: #2e9bdb;
-          width: 80%;
+          width: 85%;
         }
         &:nth-of-type(4).active{
           background: #51afe7;
-          width: 60%;
+          width: 65%;
         }
       }
     }
@@ -250,7 +254,9 @@
   /* FAQ List */
 
   #faq{
-    background: #137bd4;
+    background: url(/images/faq-bg.svg);//#137bd4;
+    background-size: cover;
+    background-repeat: no-repeat;
     color: white;
     //height: 100vh;
     margin-top: -75px;

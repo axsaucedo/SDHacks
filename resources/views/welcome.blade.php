@@ -72,9 +72,15 @@
                     </div>
 
                     <div class="social col-xs-12">
-                        <i class="fa fa-facebook"></i>
-                        <i class="fa fa-twitter"></i>
-                        <i class="fa fa-envelope"></i>
+                        <a href="https://www.facebook.com/SDHacks" target="_blank">
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                        <a href="https://twitter.com/sdhacks" target="_blank">
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                        <a href="mailto:support@sdhacks.io" target="_blank">
+                            <i class="fa fa-envelope"></i>
+                        </a>
                     </div>
                 </div>
 
@@ -96,7 +102,7 @@
             <div class="bar">
                 1000+ hackers
             </div>
-            <div class="bar">
+            <div class="bar hidden-xs">
                 International Competition
             </div>
             <div class="bar">

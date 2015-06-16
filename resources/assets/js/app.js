@@ -8,6 +8,9 @@ function isElementInViewport (el) {
         el = el[0];
     }
 
+    if(typeof el == 'undefined')
+        return false;
+
     var rect = el.getBoundingClientRect();
 
     return (
@@ -25,6 +28,8 @@ function isElementInCenter (el) {
     if (typeof jQuery === "function" && el instanceof jQuery) {
         el = el[0];
     }
+    if(typeof el == 'undefined')
+        return false;
     var rect = el.getBoundingClientRect();
     return (
         rect.top <= (window.innerHeight || document.documentElement.clientHeight)/2 &&
@@ -32,6 +37,7 @@ function isElementInCenter (el) {
     );
 }
 
+//TODO: Remove
 //jQuery Plugin for On Scrolled Event Delay
 //By: jfriend00 http://stackoverflow.com/users/816620/jfriend00
 //Sauce: http://stackoverflow.com/questions/7392058/more-efficient-way-to-handle-window-scroll-functions-in-jquery
@@ -86,7 +92,6 @@ $(function(){
         if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
             var target = $(this.hash);
             target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-            console.log(this);
             if (target.length) {
                 $('html,body').animate({
                     scrollTop: target.offset().top
@@ -95,4 +100,14 @@ $(function(){
             }
         }
     });
-})
+});
+
+function scrollToElement(el, offset, delay){
+    offset = offset || 0;
+    delay = delay || 1000;
+    $('html,body').animate({
+        scrollTop: el.offset().top+offset
+    }, delay);
+    return false;
+}
+

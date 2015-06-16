@@ -1,0 +1,79 @@
+$application-color: #26A4C5;
+$application-form-color: white;
+
+#application
+{
+  background-color: $application-color;
+  min-height: 100%;
+
+  .header {
+    background: url(/images/scripps.jpg);
+    background-size: cover;
+    height: 100%;
+    color: white;
+    text-align: center;
+
+    h1 {
+      text-transform: uppercase;
+      font-weight: 300;
+    }
+
+    .content {
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+
+
+  .form-high-group {
+    padding: 15% 0;
+
+    .control-label{
+      color: black;
+      opacity: 0.4;
+      transition: opacity .3s, color .3s;
+    }
+
+    .form-control{
+      background: white;
+      color: black;
+      opacity: 0.4;
+      transition: opacity 0.3s;
+
+      &:focus{
+        background: white;
+        opacity: 1;
+        transition: opacity 0.3s;
+      }
+    }
+
+
+    //While focused
+    &.active{
+
+      .control-label{
+        color: white;
+        opacity: 0.8;
+      }
+
+      .form-control{
+        background: white;
+        color: black;
+        opacity: 0.4;
+        transition: opacity 0.3s;
+
+        &:focus{
+          background: white;
+          opacity: 1;
+          transition: opacity 0.3s;
+        }
+      }
+    }
+
+    &:last-of-type{
+      margin-bottom: 20%;
+    }
+
+  }
+}
