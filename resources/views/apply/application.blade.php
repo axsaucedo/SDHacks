@@ -9,7 +9,7 @@
         <div class="header">
             <div class="content">
                 <h1>SD Hacks 2015 Application</h1>
-                <a href="#gender" class="btn btn-lg btn-boxed-white">Get Started</a>
+                <a href="#gender-group" class="btn btn-lg btn-boxed-white">Get Started</a>
             </div>
         </div>
         <div class="container">
@@ -33,7 +33,7 @@
             {!! Form::open(['action' => 'ApplicationsController@store']) !!}
 
             {{-- Profile --}}
-                <div class="form-group form-high-group">
+                <div id="gender-group" class="form-group form-high-group">
                     <label class="control-label" for="gender">
                         What gender do you identify as?
                     </label>

@@ -6200,7 +6200,7 @@ input.form-control {
         opacity: 1;
         transition: opacity 0.3s; }
     #application .form-high-group:last-of-type {
-      margin-bottom: 30%; }
+      margin-bottom: 20%; }
 
 #dashboard {
   color: white; }
