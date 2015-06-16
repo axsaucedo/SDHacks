@@ -106,7 +106,7 @@
             <h3 class="section-title">
                 Let Innovation Shine
             </h3>
-            <div class="content container">
+            <div class="content container text-center">
                 Until July 1st, SD Hacks will be listening to you for the best ideas you can dream of. The top 5 ideas with
                 their teams will have an all-expenses paid trip to San Diego, as well as all the supplies the hackers need
                 waiting for them at the event. Consider this the real-life gateway into your imagination.

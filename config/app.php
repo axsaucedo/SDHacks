@@ -26,7 +26,7 @@ return [
 	|
 	*/
 
-	'url' => 'http://localhost',
+	'url' => 'http://www.sdhacks.io',
 
     'domain' => env('APP_DOMAIN', 'sdhacks.io'),
 
@@ -41,7 +41,7 @@ return [
 	|
 	*/
 
-	'timezone' => 'UTC',
+	'timezone' => 'America/Los_Angeles',
 
 	/*
 	|--------------------------------------------------------------------------

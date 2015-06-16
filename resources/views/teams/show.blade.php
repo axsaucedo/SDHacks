@@ -29,7 +29,7 @@
 
                 <h4>Team Members:</h4>
                 @foreach($team->members as $member)
-                    <p class="h5">{{ $member->fname . ' ' . $member->lname }}</p>
+                    <p class="h5">{{ $member->email }}</p>
                 @endforeach
 
                 <hr/>
