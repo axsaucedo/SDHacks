@@ -8,6 +8,10 @@
             <div class="row">
                 <div class="col-md-12">
                     <h1 class="text-center">Welcome, hacker!</h1>
+                    <div class="text-center" style="padding: 10px 0;">
+                        <a class="btn btn-boxed-white" href="{{ action('Auth\AuthController@edit') }}">
+                            <i class="fa fa-cog fa-lg"></i> Account Settings</a>
+                    </div>
 
                     <div class="row">
                         <div class="col-md-6">
