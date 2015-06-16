@@ -11,6 +11,8 @@
                     <div class="text-center" style="padding: 10px 0;">
                         <a class="btn btn-boxed-white" href="{{ action('Auth\AuthController@edit') }}">
                             <i class="fa fa-cog fa-lg"></i> Account Settings</a>
+                        <a class="btn btn-boxed-white" href="{{ action('Auth\AuthController@getLogout') }}">
+                            <i class="fa fa-sign-out fa-lg"></i> Log Out</a>
                     </div>
 
                     <div class="row">
