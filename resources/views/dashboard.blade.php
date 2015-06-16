@@ -7,7 +7,11 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
-                    <h1 class="text-center">Welcome, {{ \Auth::user()->fname }}!</h1>
+                    <h1 class="text-center">Welcome, hacker!</h1>
+                    <div class="text-center" style="padding: 10px 0;">
+                        <a class="btn btn-boxed-white" href="{{ action('Auth\AuthController@edit') }}">
+                            <i class="fa fa-cog fa-lg"></i> Account Settings</a>
+                    </div>
 
                     <div class="row">
                         <div class="col-md-6">
@@ -18,7 +22,6 @@
                                         <p>Thanks for submitting an application!</p>
                                         <p>Check your email for more information soon.</p>
                                     @else
-                                        <p>It looks like you haven't applied! Applications are due 00/00/0000.</p>
                                         <a href="{{ action('ApplicationsController@create') }}" class="btn btn-block btn-boxed-white">Apply Now</a>
                                     @endif
                                 </div>

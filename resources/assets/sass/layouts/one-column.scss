@@ -27,15 +27,19 @@
     }
   }
 
-  .panel-extension {
-    color: white;
+  ::-webkit-input-placeholder {
+    color: $gray-lighter;
+  }
 
-    a {
-      color: white;
+  :-moz-placeholder { /* Firefox 18- */
+    color: $gray-lighter;
+  }
 
-      &:hover {
-        text-decoration: underline;
-      }
-    }
+  ::-moz-placeholder {  /* Firefox 19+ */
+    color: $gray-lighter;
+  }
+
+  :-ms-input-placeholder {
+    color: $gray-lighter;
   }
 }

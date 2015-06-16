@@ -71,7 +71,7 @@
                     <p class="info">UC San Diego | October 2-4</p>
 
                     <div class="col-md-8 col-md-offset-2 col-xs-12">
-                        <a href="{{ url('/auth/register') }}" class="button register-button col-md-4 col-md-offset-1 col-xs-12">
+                        <a href="{{ action('Auth\AuthController@getRegister') }}" class="button register-button col-md-4 col-md-offset-1 col-xs-12">
                             Register
                         </a>
                         <a href="mailto:sponsor@sdhacks.io" target="_blank" class="button register-button hidden-xs col-md-4 col-md-offset-2 col-xs-12">
