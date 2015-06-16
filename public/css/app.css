@@ -5876,7 +5876,7 @@ input.form-control {
         height: 40px;
         margin: 10px 15px;
         text-align: center;
-        width: 50px; }
+        width: 60px; }
         #welcome-page #nav-bar .dots .dot .circle {
           background-color: white;
           border-radius: 100%;
@@ -5969,7 +5969,7 @@ input.form-control {
     #welcome-page #splash #background-layer-3 {
       background: #00051a;
       z-index: -3; }
-  #welcome-page #overview {
+  #welcome-page #innovation {
     -moz-transform: scale(0.9999);
     border-bottom: 75px solid transparent;
     border-right: 100vw solid #005a8f;
@@ -5980,7 +5980,36 @@ input.form-control {
     padding: 0;
     position: relative;
     z-index: 5; }
+    #welcome-page #innovation #innovation-content {
+      width: 100vw; }
+      #welcome-page #innovation #innovation-content .section-title {
+        font-size: 2rem;
+        color: white;
+        font-weight: 100;
+        text-align: center;
+        margin-top: 2rem;
+        padding: 1.5rem;
+        letter-spacing: .125rem;
+        text-transform: uppercase; }
+      #welcome-page #innovation #innovation-content .content {
+        margin: 0 auto;
+        font-size: 1.5rem;
+        font-weight: 100;
+        padding: 2rem 0 4rem;
+        letter-spacing: .04rem; }
+  #welcome-page #overview {
+    -moz-transform: scale(0.9999);
+    border-bottom: 75px solid transparent;
+    border-left: 100vw solid #053A59;
+    border-top: 75px solid transparent;
+    box-sizing: content-box;
+    color: white;
+    margin-top: -80px;
+    padding: 0;
+    position: relative;
+    z-index: 5; }
     #welcome-page #overview #overview-content {
+      margin-left: -100vw;
       width: 100vw; }
       #welcome-page #overview #overview-content .section-title {
         font-size: 2rem;
@@ -6005,7 +6034,7 @@ input.form-control {
         width: 0px; }
         #welcome-page #overview #overview-content .bar::after {
           border-left: 50px solid transparent;
-          border-bottom: 82px solid #005a8f;
+          border-bottom: 82px solid #053A59;
           content: "";
           display: block;
           float: right;
@@ -6023,7 +6052,8 @@ input.form-control {
           background: #51afe7;
           width: 65%; }
   #welcome-page #faq {
-    background: url(/images/faq-bg.svg);
+    background: #137bd4;
+    background-image: url(/images/faq-bg.png);
     background-size: cover;
     background-repeat: no-repeat;
     color: white;
