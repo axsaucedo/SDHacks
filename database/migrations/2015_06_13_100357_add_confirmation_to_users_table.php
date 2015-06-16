@@ -26,7 +26,9 @@ class AddConfirmationToUsersTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::dropColumn(['confirmation_code', 'confirmed']);
+		Schema::table('users', function(Blueprint $table) {
+            $table->dropColumn(['confirmation_code', 'confirmed']);
+        });
 	}
 
 }
