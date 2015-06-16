@@ -1,8 +1,6 @@
 @extends('templates.form')
 
-@section('section-id')
-    login
-@endsection
+@section('section-id')login @endsection
 
 @section('form')
 

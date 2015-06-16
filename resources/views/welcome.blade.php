@@ -103,9 +103,9 @@
 
     <section id="innovation">
         <div id="innovation-content" class="container-fluid">
-            <div class="section-title">
+            <h3 class="section-title">
                 Let Innovation Shine
-            </div>
+            </h3>
             <div class="content container">
                 Until July 1st, SD Hacks will be listening to you for the best ideas you can dream of. The top 5 ideas with
                 their teams will have an all-expenses paid trip to San Diego, as well as all the supplies the hackers need
@@ -265,7 +265,7 @@
 
     <section id="footer">
         <div id="footer-content" class="container-fluid">
-            <img class="mini-logo" src="/images/mini_logo_white.png">
+            <img class="mini-logo" src="/images/mini_logo_white.png" alt="SD Hacks">
             <div>Copyright SD Hacks 2015</div>
         </div>
     </section>
