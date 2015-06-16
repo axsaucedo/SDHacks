@@ -26,4 +26,20 @@
       }
     }
   }
+
+  ::-webkit-input-placeholder {
+    color: $gray-lighter;
+  }
+
+  :-moz-placeholder { /* Firefox 18- */
+    color: $gray-lighter;
+  }
+
+  ::-moz-placeholder {  /* Firefox 19+ */
+    color: $gray-lighter;
+  }
+
+  :-ms-input-placeholder {
+    color: $gray-lighter;
+  }
 }
