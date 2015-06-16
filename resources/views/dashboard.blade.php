@@ -18,7 +18,6 @@
                                         <p>Thanks for submitting an application!</p>
                                         <p>Check your email for more information soon.</p>
                                     @else
-                                        <p>It looks like you haven't applied! Applications are due 00/00/0000.</p>
                                         <a href="{{ action('ApplicationsController@create') }}" class="btn btn-block btn-boxed-white">Apply Now</a>
                                     @endif
                                 </div>
