@@ -34,13 +34,17 @@
                             <div class="panel panel-default">
                                 <div class="panel-heading">Team</div>
                                 <div class="panel-body text-center">
-                                    @if(\Auth::user()->team)
-                                        <p>Your team join code is:</p>
-                                        <p>{{ \Auth::user()->team->code }}</p>
-                                        <a href="{{ action('TeamsController@show') }}" class="btn btn-block btn-boxed-white">View Team Information</a>
+                                    @if(true)
+                                        Coming Soon!
                                     @else
-                                        <p>You don't have a team yet!</p>
-                                        <a href="{{ action('TeamsController@create') }}" class="btn btn-block btn-boxed-white">Create/Join a Team</a>
+                                        @if(\Auth::user()->team)
+                                            <p>Your team join code is:</p>
+                                            <p>{{ \Auth::user()->team->code }}</p>
+                                            <a href="{{ action('TeamsController@show') }}" class="btn btn-block btn-boxed-white">View Team Information</a>
+                                        @else
+                                            <p>You don't have a team yet!</p>
+                                            <a href="{{ action('TeamsController@create') }}" class="btn btn-block btn-boxed-white">Create/Join a Team</a>
+                                        @endif
                                     @endif
                                 </div>
                             </div>
