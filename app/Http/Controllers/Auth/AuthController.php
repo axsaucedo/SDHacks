@@ -65,7 +65,11 @@ class AuthController extends Controller
         // Generate confirmation code
         $confirmation_code = str_random(60) . $request->input('email');
         $input['confirmation_code'] = $confirmation_code;
-        $user_token = str_random(60);
+
+        do {
+            $user_token = str_random(60);
+        }
+        while (\User::where('token', $user_token));
         $input['token'] = $user_token;
 
         // Create user
