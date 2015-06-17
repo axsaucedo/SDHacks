@@ -71,6 +71,9 @@ class AuthController extends Controller
         //}
         //while (User::where('token', $user_token));
         $input['token'] = $user_token;
+        //Temporary random token
+        //TODO: Probably remove this
+        //$input['users_token_unique'] = str_random(60);
 
         // Create user
         $user = $this->registrar->create($input);
