@@ -69,7 +69,7 @@ class AuthController extends Controller
         do {
             $user_token = str_random(60);
         }
-        while (\User::where('token', $user_token));
+        while (User::where('token', $user_token));
         $input['token'] = $user_token;
 
         // Create user
