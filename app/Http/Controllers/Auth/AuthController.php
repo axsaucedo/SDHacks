@@ -65,6 +65,8 @@ class AuthController extends Controller
         // Generate confirmation code
         $confirmation_code = str_random(60) . $request->input('email');
         $input['confirmation_code'] = $confirmation_code;
+        $user_token = str_random(60);
+        $input['token'] = $user_token;
 
         // Create user
         $user = $this->registrar->create($input);
@@ -81,11 +83,6 @@ class AuthController extends Controller
                     $message->getHeaders()->addTextHeader('X-Mailgun-Campaign-Id', 'email_confirmation');
                 }
             );
-
-            // Generate token to identify user
-            $user_token = str_random(60) . $user->id;
-            $user->token = $user_token;
-            $user->save();
 
             return view('auth.success');
         } else {
