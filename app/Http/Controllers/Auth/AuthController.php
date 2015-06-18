@@ -6,6 +6,7 @@ use Illuminate\Contracts\Auth\Registrar;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 use Illuminate\Http\Request;
 use App\User;
+use Illuminate\Support\Facades\Validator;
 use Mailchimp;
 
 class AuthController extends Controller
@@ -35,13 +36,50 @@ class AuthController extends Controller
      * @param  \Illuminate\Contracts\Auth\Registrar $registrar
      * @param Mailchimp $mailchimp
      */
-    public function __construct(Guard $auth, Registrar $registrar, Mailchimp $mailchimp)
+    public function __construct(Mailchimp $mailchimp)
     {
-        $this->auth = $auth;
-        $this->registrar = $registrar;
         $this->mailchimp = $mailchimp;
 
         $this->middleware('guest', ['except' => ['getLogout', 'getConfirm', 'edit', 'update', 'redirectToGitHub', 'handleGitHubCallback']]);
+    }
+
+    /**
+     * Get a validator for an incoming registration request.
+     *
+     * @param  array  $data
+     * @return \Illuminate\Contracts\Validation\Validator
+     */
+    public function validator(array $data)
+    {
+        return Validator::make($data, [
+            'email' => 'required|email|max:255|unique:users',
+            'password' => 'required|confirmed|min:6',
+        ],
+            [
+                'required' => 'The :attribute field is required.',
+                'unique' => 'Your :attribute has already been taken!',
+                'same'    => 'The :attribute and :other must match.',
+                'size'    => 'The :attribute must be exactly :size.',
+                'between' => 'The :attribute must be between :min - :max.',
+                'in'      => 'The :attribute must be one of the following types: :values',
+                'confirmed'      => 'The :attribute must be confirmed',
+            ]);
+    }
+
+    /**
+     * Create a new user instance after a valid registration.
+     *
+     * @param  array  $data
+     * @return User
+     */
+    public function create(array $data)
+    {
+        return User::create([
+            'email' => $data['email'],
+            'password' => bcrypt($data['password']),
+            'confirmation_code' => $data['confirmation_code'],
+            'token' => $data['token']
+        ]);
     }
 
     /**
@@ -53,7 +91,7 @@ class AuthController extends Controller
     public function postRegister(Request $request)
     {
         $input = $request->all();
-        $validator = $this->registrar->validator($input);
+        $validator = $this->validator($input);
 
         if ($validator->fails()) {
             $this->throwValidationException(
@@ -76,7 +114,7 @@ class AuthController extends Controller
         //$input['users_token_unique'] = str_random(60);
 
         // Create user
-        $user = $this->registrar->create($input);
+        $user = $this->create($input);
 
         if ($user) {
             $data = array(
