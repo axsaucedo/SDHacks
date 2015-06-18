@@ -7,11 +7,13 @@ class AuthControllerTest extends TestCase {
 
     use DatabaseTransactions;
 
-    /**
-     * Middleware
-     */
+    // =================
+    // Middleware
+    // =================
 
-    /** Registration */
+    // -----------------
+    // Registration
+    // -----------------
 
     /**
      * Test if page redirects if authenticated
@@ -36,7 +38,9 @@ class AuthControllerTest extends TestCase {
         $this->see('Register');
     }
 
-    /** Login */
+    // -----------------
+    // Login
+    // -----------------
 
     /**
      * Test if page redirects if authenticated
@@ -63,13 +67,13 @@ class AuthControllerTest extends TestCase {
     }
 
 
-    /**
-     * Controller Tests
-     */
+    // =================
+    // Controller
+    // =================
 
-    /**
-     * Registration
-     */
+    // -----------------
+    // Registration
+    // -----------------
 
     /**
      * Test register link from login page
