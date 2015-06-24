@@ -348,7 +348,7 @@
     -moz-transform: scale(.9999);
 
     border-bottom: 90px solid transparent;
-    border-right: 100vw solid #ecf7f9;
+    border-right: 100vw solid #fff;
     border-top: 90px solid transparent;
     box-sizing: content-box;
     color: white;
@@ -376,6 +376,15 @@
         height: 7rem;
         transition: -webkit-filter .1s;
 
+        &.title-sponsor{
+          height: 18.5rem;
+        }
+
+        &.black{
+          filter: brightness(0);
+          -webkit-filter: brightness(0);
+        }
+
         &:hover{
           -webkit-filter: none;
         }
@@ -401,6 +410,9 @@
   /* Presented By Section */
 
   #presented{
+    background: #ecf7f9;
+    margin-top: -90px;
+    padding-top: 90px;
     #presented-content{
       padding: 55px 0 75px 0;
 

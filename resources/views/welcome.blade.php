@@ -191,11 +191,11 @@
     <section id="sponsors">
         <div id="sponsors-content" class="container-fluid">
             <div class="row">
-            <!--
                 <div class="col-md-8 col-md-offset-2">
-                    <div class="logo" style="background-image: url(http://d2vhierclfllnw.cloudfront.net/wp-content/uploads/sites/7/2014/09/affiliate-qualcomm-logo-01352357fc32cec6fb50356b86350d401.png);"></div>
+                    <div class="logo black title-sponsor" style="background-image: url(/images/master-qc-logo_pms_pos_s.png);"></div>
                     <div class="hidden-xs"></div>
                 </div>
+            <!--
                 <div class="col-md-4 col-sm-6 col-xs-6">
                     <div class="logo" style="background-image: url(http://www.bloomberg.com/graphics/2015-cheatsheets/img/bofalogo.png)">
                     </div>
