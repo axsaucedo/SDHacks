@@ -192,46 +192,50 @@
         <div id="sponsors-content" class="container-fluid">
             <div class="row">
                 <div class="col-md-8 col-md-offset-2">
-                    <div class="logo black title-sponsor" style="background-image: url(/images/master-qc-logo_pms_pos_s.png);"></div>
-                    <div class="hidden-xs"></div>
+                    <a href="https://www.qualcomm.com/" target="_blank">
+                        <div class="logo black title-sponsor" style="background-image: url(/images/master-qc-logo_pms_pos_s.png);"></div>
+                        <div class="hidden-xs"></div>
+                    </a>
                 </div>
+            @if(false)
             <!--
                 <div class="col-md-4 col-sm-6 col-xs-6">
-                    <div class="logo" style="background-image: url(http://www.bloomberg.com/graphics/2015-cheatsheets/img/bofalogo.png)">
+                    <div class="logo" style="background-image: url()">
                     </div>
                     <div class="hidden-xs"></div>
                 </div>
                 <div class="col-md-4 col-sm-6 col-xs-6">
-                    <div class="logo" style="background-image: url(https://www.google.com/images/srpr/logo11w.png)">
+                    <div class="logo" style="background-image: url()">
                     </div>
                     <div class="hidden-xs"></div>
                 </div>
                 <div class="col-md-4 col-sm-6 col-xs-4">
-                    <div class="logo" style="background-image: url(http://www.govigaming.com/razer2.png)">
+                    <div class="logo" style="background-image: url()">
                     </div>
                     <div class="hidden-xs"></div>
                 </div>
                 <div class="col-md-3 col-sm-6 col-xs-4">
-                    <div class="logo" style="background-image: url(http://www.freelargeimages.com/wp-content/uploads/2014/11/Facebook_logo-9.png)">
+                    <div class="logo" style="background-image: url()">
                     </div>
                     <div class="hidden-xs"></div>
                 </div>
                 <div class="col-md-3 col-sm-4 col-xs-4">
-                    <div class="logo" style="background-image: url(http://i198.photobucket.com/albums/aa310/Govavi/GEAR%20STORE/VaviLogo.png)">
+                    <div class="logo" style="background-image: url()">
                     </div>
                     <div class="hidden-xs"></div>
                 </div>
                 <div class="col-md-3 col-sm-4 col-xs-4">
-                    <div class="logo" style="background-image: url(http://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Cisco_logo.svg/2000px-Cisco_logo.svg.png)">
+                    <div class="logo" style="background-image: url()">
                     </div>
                     <div class="hidden-xs"></div>
                 </div>
                 <div class="col-md-3 col-sm-4 col-xs-4">
-                    <div class="logo" style="background-image: url(http://upload.wikimedia.org/wikipedia/commons/5/5d/CBS_Interactive_Logo.PNG)">
+                    <div class="logo" style="background-image: url()">
                     </div>
                     <div class="hidden-xs"></div>
                 </div>
                 -->
+            @endif
                 <a href="mailto:sponsor@sdhacks.io" target="_blank">
                     <div class="sponsor-button col-xs-12">
                         Become a Sponsor <i class="fa fa-arrow-circle-right" style="font-size: 2rem;"></i>
