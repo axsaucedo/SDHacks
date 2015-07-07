@@ -197,6 +197,20 @@
                         <div class="hidden-xs"></div>
                     </a>
                 </div>
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                    <a href="http://www.cse.ucsd.edu/" target="_blank">
+                        <div class="logo" style="background-image: url('/images/ucsd_cse.png')">
+                        </div>
+                        <div class="hidden-xs"></div>
+                    </a>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                    <a href="http://www.jacobsschool.ucsd.edu/" target="_blank">
+                        <div class="logo" style="background-image: url('http://www.jacobsschool.ucsd.edu/assets/images/jsoe_logo_540.png')">
+                        </div>
+                        <div class="hidden-xs"></div>
+                    </a>
+                </div>
             @if(false)
             <!--
                 <div class="col-md-4 col-sm-6 col-xs-6">
