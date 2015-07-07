@@ -371,8 +371,8 @@
         background-position: center;
         background-repeat: no-repeat;
         background-size: contain;
-        filter: grayscale(100%) contrast(0%);
-        -webkit-filter: grayscale(100%) contrast(0%);
+        //filter: grayscale(100%) contrast(0%);
+        //-webkit-filter: grayscale(100%) contrast(0%);
         height: 7rem;
         transition: -webkit-filter .1s;
 
@@ -381,12 +381,12 @@
         }
 
         &.black{
-          filter: brightness(0);
-          -webkit-filter: brightness(0);
+          //filter: brightness(0);
+          //-webkit-filter: brightness(0);
         }
 
         &:hover{
-          -webkit-filter: none;
+          //-webkit-filter: none;
         }
       }
       .sponsor-button{
